@@ -1,7 +1,26 @@
 [
   {
-    "type": "template",
+    "type": "frontmatter",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "template",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "frontmatter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "---",
+    "named": false
   }
 ]

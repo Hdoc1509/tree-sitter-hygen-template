@@ -2,11 +2,37 @@
   "name": "hygen_template",
   "rules": {
     "template": {
-      "type": "REPEAT",
-      "content": {
-        "type": "PATTERN",
-        "value": "\\w"
-      }
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "frontmatter"
+        }
+      ]
+    },
+    "frontmatter": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "TOKEN",
+          "content": {
+            "type": "PREC",
+            "value": 1,
+            "content": {
+              "type": "STRING",
+              "value": "---"
+            }
+          }
+        },
+        {
+          "type": "PATTERN",
+          "value": ".+"
+        },
+        {
+          "type": "STRING",
+          "value": "---"
+        }
+      ]
     }
   },
   "extras": [

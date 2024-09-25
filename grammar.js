@@ -5,6 +5,8 @@ module.exports = grammar({
   name: "hygen_template",
 
   rules: {
-    template: (_) => repeat(/\w/),
+    template: ($) => seq($.frontmatter),
+
+    frontmatter: () => seq(token(prec(1, "---")), /.+/, "---"),
   },
 });
