@@ -1,0 +1,23 @@
+{
+  "name": "hygen_template",
+  "rules": {
+    "template": {
+      "type": "REPEAT",
+      "content": {
+        "type": "PATTERN",
+        "value": "\\w"
+      }
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
