@@ -22,5 +22,9 @@
   {
     "type": "---",
     "named": false
+  },
+  {
+    "type": "content",
+    "named": true
   }
 ]

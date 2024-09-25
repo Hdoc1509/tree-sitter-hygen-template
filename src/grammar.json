@@ -26,13 +26,24 @@
         },
         {
           "type": "PATTERN",
-          "value": ".+"
+          "value": "\\w+:\\s.+"
         },
         {
           "type": "STRING",
           "value": "---"
         }
       ]
+    },
+    "body": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "content"
+      }
+    },
+    "content": {
+      "type": "PATTERN",
+      "value": ".+"
     }
   },
   "extras": [
