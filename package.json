@@ -11,8 +11,8 @@
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js",
-    "test:all": "tree-sitter test",
-    "test:one": "tree-sitter test --filter",
+    "test:all": "pnpm run generate && tree-sitter test",
+    "test:one": "pnpm run generate && tree-sitter test --filter",
     "_test:watchable": "wireit"
   },
   "wireit": {
