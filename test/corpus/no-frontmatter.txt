@@ -1,5 +1,7 @@
 ==================
 No frontmatter
+
+:error
 ==================
 
 test body
