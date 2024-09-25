@@ -1,0 +1,12 @@
+====================||
+Frontmatter Metadata
+====================||
+
+---
+to: app/emails/example.html
+---
+
+---||
+
+(template
+  (frontmatter))
