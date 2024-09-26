@@ -8,8 +8,6 @@ test body
 
 ---||
 
-(template)
-
 =================||
 Empty Frontmatter
 
