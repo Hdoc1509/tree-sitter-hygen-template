@@ -11,6 +11,17 @@ test body
 (template)
 
 =================||
+Empty Frontmatter
+
+:error
+=================||
+
+---
+---
+
+---||
+
+=================||
 Basic Frontmatter
 =================||
 
