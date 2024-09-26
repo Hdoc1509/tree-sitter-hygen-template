@@ -21,7 +21,10 @@ to: app/emails/example.html
 ---||
 
 (template
-  (frontmatter))
+  (frontmatter
+    (metadata
+      (key)
+      (value))))
 
 ===========================||
 Frontmatter Simple Metadata
