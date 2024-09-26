@@ -10,9 +10,9 @@ test body
 
 (template)
 
-===========||
-Frontmatter
-===========||
+=================||
+Basic Frontmatter
+=================||
 
 ---
 to: app/emails/example.html
