@@ -28,12 +28,17 @@ Tree-sitter grammar for Hygen templates.
 
 - [ ] extend [embedded template grammar](https://github.com/tree-sitter/tree-sitter-embedded-template)
 - [x] frontmatter pair of property and value
-- [ ] only highlight [valid frontmatter properties for `Hygen`](https://www.hygen.io/docs/templates/#all-frontmatter-properties)
-- [ ] inject `javascript` parser in `code` nodes _(`code` node comes from `embedded-template`)_
 - [ ] rest of template that is not `frontmatter` will be `body` node
 
 ### Queries
 
-- [ ] frontmatter property key as `@property`
-- [ ] frontmatter property value as `@string`
+#### Highlights
+
+- [ ] only highlight [valid frontmatter properties for `Hygen`](https://www.hygen.io/docs/templates/#all-frontmatter-properties)
+- [ ] metadata property key as `@property`
+- [ ] metadata property value as `@string`
   - [ ] `code` node can be present in frontmatter property value
+
+#### Injections
+
+- [ ] inject `javascript` parser in `code` nodes _(`code` node comes from `embedded-template`)_
