@@ -22,3 +22,27 @@ to: app/emails/example.html
 
 (template
   (frontmatter))
+
+===========================||
+Frontmatter Simple Metadata
+===========================||
+
+---
+title: Example
+subject: Example
+to: app/emails/example.html
+---
+
+---||
+
+(template
+  (frontmatter
+    (metadata
+      key: (key)
+      value: (value))
+    (metadata
+      key: (key)
+      value: (value))
+    (metadata
+      key: (key)
+      value: (value))))

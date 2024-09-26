@@ -10,7 +10,11 @@ module.exports = grammar({
   rules: {
     template: ($) => seq($.frontmatter),
 
-    frontmatter: () => seq(token(prec(1, "---")), /\w+:\s.+/, "---"),
+    frontmatter: ($) => seq(token(prec(1, "---")), repeat1($.metadata), "---"),
+
+    metadata: $ => seq(field("key", $.key), ":", field("value", $.value)),
+    key: () => /\w+/,
+    value: () => /.+/,
 
     body: ($) => repeat1($.content),
 

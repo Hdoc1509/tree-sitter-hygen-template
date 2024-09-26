@@ -27,7 +27,7 @@ Tree-sitter grammar for Hygen templates.
 <!-- TODO: see extending example https://gitlab.com/WhyNotHugo/tree-sitter-jsonc/-/blob/main/grammar.js?ref_type=heads -->
 
 - [ ] extend [embedded template grammar](https://github.com/tree-sitter/tree-sitter-embedded-template)
-- [ ] frontmatter pair of property and value
+- [x] frontmatter pair of property and value
 - [ ] only highlight [valid frontmatter properties for `Hygen`](https://www.hygen.io/docs/templates/#all-frontmatter-properties)
 - [ ] inject `javascript` parser in `code` nodes _(`code` node comes from `embedded-template`)_
 - [ ] rest of template that is not `frontmatter` will be `body` node
