@@ -19,10 +19,21 @@ Empty Frontmatter
 
 ---||
 
+============================||
+Line break before Fontmatter
+
+:error
+============================||
+
+---
+breaks: true
+---
+
+---||
+
 =================||
 Basic Frontmatter
 =================||
-
 ---
 to: app/emails/example.html
 ---
@@ -38,7 +49,6 @@ to: app/emails/example.html
 ===========================||
 Frontmatter Simple Metadata
 ===========================||
-
 ---
 title: Example
 subject: Example
