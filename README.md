@@ -38,7 +38,7 @@ Tree-sitter grammar for Hygen templates.
 
 - [x] extend [embedded template grammar](https://github.com/tree-sitter/tree-sitter-embedded-template)
 - [x] frontmatter pair of property and value
-- [ ] rest of template that is not `frontmatter` will be `body` node
+- [x] rest of template that is not `frontmatter` will be `body` node
 - [ ] `code` node can be present in frontmatter property value
 
 ### Queries

@@ -1,5 +1,20 @@
 [
   {
+    "type": "body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "code",
     "named": true,
     "fields": {}
@@ -60,9 +75,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "body",
+          "named": true
+        },
         {
           "type": "frontmatter",
           "named": true
