@@ -110,3 +110,10 @@ Tree-sitter grammar for Hygen templates.
 #### Injections
 
 - [x] inject `javascript` parser in `code` nodes _(`code` node comes from `embedded-template`)_
+- [ ] dynamic injection in `body.content` node by using file extension, e.g.:
+
+  - `file.js.hygen` will be highlighted with `javascript` parser
+  - `file.astro.hygen` will be highlighted with `astro` parser
+  - `file.md.hygen` will be highlighted with `markdown` parser
+
+  _Target parser wil be extracted from `file-name.(ext).hygen`_
