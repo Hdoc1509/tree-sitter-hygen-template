@@ -75,9 +75,6 @@ Frontmatter with variables
 ---
 to: app/emails/<%= name %>.html
 ---
-
-Hello <%= name %>!
-
 ---||
 
 (template
@@ -88,8 +85,4 @@ Hello <%= name %>!
         (string_value)
         (output_directive
           (code))
-        (string_value))))
-  (body
-    (content)
-    (output_directive (code))
-    (content)))
+        (string_value)))))
