@@ -37,7 +37,6 @@ Basic Frontmatter
 ---
 to: app/emails/example.html
 ---
-
 ---||
 
 (template
@@ -54,7 +53,6 @@ title: Example
 subject: Example
 to: app/emails/example.html
 ---
-
 ---||
 
 (template
