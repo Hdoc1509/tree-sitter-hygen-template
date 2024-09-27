@@ -8,7 +8,17 @@ Tree-sitter grammar for Hygen templates.
 
 ### Neovim
 
-<!-- TODO: follow https://github.com/tree-sitter-perl/tree-sitter-perl?tab=readme-ov-file#neovim -->
+#### Required parsers
+
+- [`embedded-template`](https://github.com/tree-sitter/tree-sitter-embedded-template):
+  highlight of [`ejs` tags](https://github.com/mde/ejs?tab=readme-ov-file#tags)
+
+#### Optional parsers
+
+- [`javascript`](https://github.com/tree-sitter/tree-sitter-javascript):
+  highlight of `code` nodes
+
+#### Installation
 
 1. Add the following to your `init.lua` or respective config file:
 
