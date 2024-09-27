@@ -2,7 +2,13 @@
 
 Tree-sitter grammar for Hygen templates.
 
-<!-- TODO: add image of syntax highlighting -->
+<!--
+  TODO: add images of syntax highlighting
+  - without the parser
+  - with the parser
+  - with the parser and `javascript` parser
+  - with the parser, `javascript` parser and dinamic injection
+-->
 
 ## Usage in Editors
 
