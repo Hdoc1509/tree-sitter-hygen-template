@@ -21,6 +21,12 @@ Tree-sitter grammar for Hygen templates.
 <!-- NOTE: shoud I install eslint-config-treesitter? -->
 
 - [ ] add CI workflow (grammar tests)
+  <!-- NOTE: see: -->
+  <!-- - https://github.com/tree-sitter-grammars/template/blob/master/.github/workflows/publish.yml -->
+  <!-- - https://github.com/alex-pinkus/tree-sitter-swift/issues/149 -->
+  <!-- - https://github.com/DerekStride/tree-sitter-sql/pull/100 -->
+  <!-- - https://github.com/tree-sitter-perl/tree-sitter-perl/blob/master/.github/workflows/release.yml -->
+  <!--   https://github.com/tree-sitter-perl/tree-sitter-perl/blob/master/copy-to-release -->
 
 ### Testing
 
