@@ -68,3 +68,28 @@ to: app/emails/example.html
     (metadata
       key: (key)
       value: (value))))
+
+==========================||
+Frontmatter with variables
+==========================||
+---
+to: app/emails/<%= name %>.html
+---
+
+Hello <%= name %>!
+
+---||
+
+(template
+  (frontmatter
+    (metadata
+      (key)
+      (value
+        (string_value)
+        (output_directive
+          (code))
+        (string_value))))
+  (body
+    (content)
+    (output_directive (code))
+    (content)))
