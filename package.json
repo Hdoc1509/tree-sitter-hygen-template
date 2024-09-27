@@ -64,7 +64,6 @@
   },
   "devDependencies": {
     "@changesets/cli": "2.27.8",
-    "chokidar": "4.0.1",
     "prebuildify": "6.0.1",
     "prettier": "3.3.3",
     "tree-sitter": "0.21.1",
