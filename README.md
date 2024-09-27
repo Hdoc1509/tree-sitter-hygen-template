@@ -93,4 +93,4 @@ Tree-sitter grammar for Hygen templates.
 
 #### Injections
 
-- [ ] inject `javascript` parser in `code` nodes _(`code` node comes from `embedded-template`)_
+- [x] inject `javascript` parser in `code` nodes _(`code` node comes from `embedded-template`)_
