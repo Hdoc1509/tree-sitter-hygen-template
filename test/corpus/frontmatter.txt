@@ -44,7 +44,7 @@ to: app/emails/example.html
   (frontmatter
     (metadata
       (key)
-      (value))))
+      (value (string_value)))))
 
 ===========================||
 Frontmatter Simple Metadata
@@ -61,13 +61,13 @@ to: app/emails/example.html
   (frontmatter
     (metadata
       key: (key)
-      value: (value))
+      value: (value (string_value)))
     (metadata
       key: (key)
-      value: (value))
+      value: (value (string_value)))
     (metadata
       key: (key)
-      value: (value))))
+      value: (value (string_value)))))
 
 ==========================||
 Frontmatter with variables
