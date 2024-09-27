@@ -74,7 +74,7 @@ Tree-sitter grammar for Hygen templates.
 
 ### Testing
 
-- [ ] template can be only `frontmatter`
+- [x] template can be only `frontmatter`
 
 ### Grammar
 
