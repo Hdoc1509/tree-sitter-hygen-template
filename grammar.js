@@ -28,6 +28,11 @@ module.exports = grammar(embedded_template, {
       seq(repeat1(choice($.directive, $.output_directive, $.string_value))),
     string_value: () => /[^<\n]+/,
 
-    body: ($) => repeat1(choice($.content)),
+    body: ($) =>
+      repeat1(
+        // same as `template` rule of `embedded_template` but without
+        // $.graphql_directive node
+        choice($.directive, $.output_directive, $.comment_directive, $.content),
+      ),
   },
 });

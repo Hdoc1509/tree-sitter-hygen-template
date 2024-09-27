@@ -336,6 +336,18 @@
         "members": [
           {
             "type": "SYMBOL",
+            "name": "directive"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "output_directive"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "comment_directive"
+          },
+          {
+            "type": "SYMBOL",
             "name": "content"
           }
         ]
