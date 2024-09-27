@@ -1,8 +1,20 @@
 {
   "name": "tree-sitter-hygen-template",
   "version": "0.0.0",
+  "license": "MIT",
+  "author": "Héctor Ochoa <hector.ochoa.dev@gmail.com>",
   "description": "Hygen template grammar for tree-sitter",
-  "repository": "github:Hdoc1509/tree-sitter-hygen-template",
+  "types": "bindings/node",
+  "packageManager": "pnpm@9.6.0",
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
   "scripts": {
     "dev": "pnpm run _test:watchable --watch",
     "dev:one": "pnpm run _test:watchable --watch -- --filter",
@@ -15,21 +27,7 @@
     "test:one": "pnpm run generate && tree-sitter test --filter",
     "_test:watchable": "wireit"
   },
-  "wireit": {
-    "generate": {
-      "command": "tree-sitter generate"
-    },
-    "_test:watchable": {
-      "command": "clear && echo 'Running parser tests...\n' && tree-sitter test",
-      "dependencies": [
-        "generate"
-      ],
-      "files": [
-        "grammar.js",
-        "test/corpus/*.txt"
-      ]
-    }
-  },
+  "repository": "github:Hdoc1509/tree-sitter-hygen-template",
   "keywords": [
     "hygen",
     "hygen-template",
@@ -37,18 +35,6 @@
     "tree-sitter",
     "parser"
   ],
-  "files": [
-    "grammar.js",
-    "binding.gyp",
-    "prebuilds/**",
-    "bindings/node/*",
-    "queries/*",
-    "src/**",
-    "*.wasm"
-  ],
-  "author": "Héctor Ochoa <hector.ochoa.dev@gmail.com>",
-  "license": "MIT",
-  "packageManager": "pnpm@9.6.0",
   "dependencies": {
     "node-addon-api": "8.0.0",
     "node-gyp-build": "4.8.1",
@@ -70,11 +56,25 @@
     "tree-sitter-cli": "0.23.0",
     "wireit": "0.14.9"
   },
-  "types": "bindings/node",
   "tree-sitter": [
     {
       "scope": "source.hygen_template",
       "injection-regex": "^hygen_template$"
     }
-  ]
+  ],
+  "wireit": {
+    "generate": {
+      "command": "tree-sitter generate"
+    },
+    "_test:watchable": {
+      "command": "clear && echo 'Running parser tests...\n' && tree-sitter test",
+      "dependencies": [
+        "generate"
+      ],
+      "files": [
+        "grammar.js",
+        "test/corpus/*.txt"
+      ]
+    }
+  }
 }
