@@ -16,3 +16,31 @@ test body
       (value (string_value))))
   (body
     (content)))
+
+==================||
+Body with directives
+==================||
+---
+to: example-text.txt
+---
+<%
+  Name = "John Doe"
+-%>
+
+Hello <%= Name %>!
+
+<%# This is a comment %>
+---||
+
+(template
+  (frontmatter
+    (metadata
+      (key)
+      (value (string_value))))
+  (body
+    (content)
+    (directive (code))
+    (content)
+    (output_directive (code))
+    (content)
+    (comment_directive (comment))))
