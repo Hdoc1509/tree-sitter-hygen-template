@@ -2,6 +2,50 @@
 
 Tree-sitter grammar for Hygen templates.
 
+<!-- TODO: add image of syntax highlighting -->
+
+## Usage in Editors
+
+### Neovim
+
+<!-- TODO: follow https://github.com/tree-sitter-perl/tree-sitter-perl?tab=readme-ov-file#neovim -->
+
+1. Add the following to your `init.lua` or respective config file:
+
+   ```lua
+   local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+   parser_config.hygen_template = {
+     install_info = {
+       url = "https://github.com/Hdoc1509/tree-sitter-hygen-template",
+       files = { "src/parser.c" },
+       generate_requires_npm = true,
+     },
+     filetype = "hygen",
+   }
+   ```
+
+2. Add the `hygen` filetype to your `init.lua` or respective config file:
+
+   ```lua
+   vim.filetype.add({
+     extension = {
+       hygen = "hygen",
+     }
+   })
+   ```
+
+3. Run `:TSInstall hygen_template` to install the parser.
+
+4. Copy the queries from [`neovim/queries`](/docs/copying-queries.md) to
+   `queries/hygen_template` directory in your `neovim` configuration directory:
+
+   | With                  | Path                    |
+   | --------------------- | ----------------------- |
+   | Unix                  | `~/.config/nvim`        |
+   | Windows               | `~/AppData/Local/nvim`  |
+   | `XDG_CONFIG_HOME` set | `$XDG_CONFIG_HOME/nvim` |
+
 ## References
 
 - [Hygen repository](https://github.com/jondot/hygen)
