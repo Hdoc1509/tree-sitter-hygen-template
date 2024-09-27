@@ -33,6 +33,7 @@ Tree-sitter grammar for Hygen templates.
 - [x] extend [embedded template grammar](https://github.com/tree-sitter/tree-sitter-embedded-template)
 - [x] frontmatter pair of property and value
 - [ ] rest of template that is not `frontmatter` will be `body` node
+- [ ] `code` node can be present in frontmatter property value
 
 ### Queries
 
@@ -41,7 +42,6 @@ Tree-sitter grammar for Hygen templates.
 - [ ] only highlight [valid frontmatter properties for `Hygen`](https://www.hygen.io/docs/templates/#all-frontmatter-properties)
 - [ ] metadata property key as `@property`
 - [ ] metadata property value as `@string`
-  - [ ] `code` node can be present in frontmatter property value
 
 #### Injections
 
