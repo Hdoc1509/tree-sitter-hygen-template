@@ -285,8 +285,33 @@
       "value": "\\w+"
     },
     "value": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "directive"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "output_directive"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "string_value"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "string_value": {
       "type": "PATTERN",
-      "value": ".+"
+      "value": "[^<\\n]+"
     },
     "body": {
       "type": "REPEAT1",

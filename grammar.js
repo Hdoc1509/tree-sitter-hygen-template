@@ -24,7 +24,9 @@ module.exports = grammar(embedded_template, {
     metadata: ($) =>
       seq(field("key", $.key), ":", field("value", $.value), /\n/),
     key: () => /\w+/,
-    value: () => /.+/,
+    value: ($) =>
+      seq(repeat1(choice($.directive, $.output_directive, $.string_value))),
+    string_value: () => /[^<\n]+/,
 
     body: ($) => repeat1($.content),
 
