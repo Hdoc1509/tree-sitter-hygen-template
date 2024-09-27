@@ -211,6 +211,10 @@
           }
         },
         {
+          "type": "PATTERN",
+          "value": "\\n"
+        },
+        {
           "type": "REPEAT1",
           "content": {
             "type": "SYMBOL",
@@ -220,6 +224,18 @@
         {
           "type": "STRING",
           "value": "---"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "\\n"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -245,6 +261,10 @@
             "type": "SYMBOL",
             "name": "value"
           }
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\n"
         }
       ]
     },

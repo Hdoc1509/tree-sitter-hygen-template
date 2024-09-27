@@ -12,9 +12,17 @@ module.exports = grammar(embedded_template, {
   rules: {
     template: ($) => seq($.frontmatter),
 
-    frontmatter: ($) => seq(token(prec(1, "---")), repeat1($.metadata), "---"),
+    frontmatter: ($) =>
+      seq(
+        token(prec(1, "---")),
+        /\n/,
+        repeat1($.metadata),
+        "---",
+        optional(/\n/),
+      ),
 
-    metadata: ($) => seq(field("key", $.key), ":", field("value", $.value)),
+    metadata: ($) =>
+      seq(field("key", $.key), ":", field("value", $.value), /\n/),
     key: () => /\w+/,
     value: () => /.+/,
 
