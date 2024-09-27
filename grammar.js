@@ -4,7 +4,9 @@
 // NOTE: AVOID USAGE OF `*` (wildcard) INSIDE `repeat()` or `repeat1()` functions.
 // IT CAN LEAD TO INFINITE LOOPS!!!
 
-module.exports = grammar({
+const embedded_template = require("tree-sitter-embedded-template/grammar");
+
+module.exports = grammar(embedded_template, {
   name: "hygen_template",
 
   rules: {
@@ -12,7 +14,7 @@ module.exports = grammar({
 
     frontmatter: ($) => seq(token(prec(1, "---")), repeat1($.metadata), "---"),
 
-    metadata: $ => seq(field("key", $.key), ":", field("value", $.value)),
+    metadata: ($) => seq(field("key", $.key), ":", field("value", $.value)),
     key: () => /\w+/,
     value: () => /.+/,
 

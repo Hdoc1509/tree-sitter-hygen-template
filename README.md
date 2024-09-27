@@ -22,11 +22,15 @@ Tree-sitter grammar for Hygen templates.
 
 - [ ] add CI workflow (grammar tests)
 
+### Testing
+
+- [ ] template can be only `frontmatter`
+
 ### Grammar
 
 <!-- TODO: see extending example https://gitlab.com/WhyNotHugo/tree-sitter-jsonc/-/blob/main/grammar.js?ref_type=heads -->
 
-- [ ] extend [embedded template grammar](https://github.com/tree-sitter/tree-sitter-embedded-template)
+- [x] extend [embedded template grammar](https://github.com/tree-sitter/tree-sitter-embedded-template)
 - [x] frontmatter pair of property and value
 - [ ] rest of template that is not `frontmatter` will be `body` node
 

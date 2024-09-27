@@ -21,8 +21,13 @@
     },
     "_test:watchable": {
       "command": "clear && echo 'Running parser tests...\n' && tree-sitter test",
-      "dependencies": ["generate"],
-      "files": ["grammar.js", "test/corpus/*.txt"]
+      "dependencies": [
+        "generate"
+      ],
+      "files": [
+        "grammar.js",
+        "test/corpus/*.txt"
+      ]
     }
   },
   "keywords": [
@@ -46,7 +51,8 @@
   "packageManager": "pnpm@9.6.0",
   "dependencies": {
     "node-addon-api": "8.0.0",
-    "node-gyp-build": "4.8.1"
+    "node-gyp-build": "4.8.1",
+    "tree-sitter-embedded-template": "0.23.0"
   },
   "peerDependencies": {
     "tree-sitter": "0.21.1"

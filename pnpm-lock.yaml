@@ -14,6 +14,9 @@ importers:
       node-gyp-build:
         specifier: 4.8.1
         version: 4.8.1
+      tree-sitter-embedded-template:
+        specifier: 0.23.0
+        version: 0.23.0(tree-sitter@0.21.1)
     devDependencies:
       '@changesets/cli':
         specifier: 2.27.8
@@ -350,8 +353,16 @@ packages:
     resolution: {integrity: sha512-ipO7rsHEBqa9STO5C5T10fj732ml+5kLN1cAG8/jdHd56ldQeGj3Q7+scUS+VHK/qy1zLEwC4wMK5+yM0btPvw==}
     engines: {node: ^18 || ^20 || >= 21}
 
+  node-addon-api@8.1.0:
+    resolution: {integrity: sha512-yBY+qqWSv3dWKGODD6OGE6GnTX7Q2r+4+DfpqxHSHh8x0B4EKP9+wVGLS6U/AM1vxSNNmUEuIV5EGhYwPpfOwQ==}
+    engines: {node: ^18 || ^20 || >= 21}
+
   node-gyp-build@4.8.1:
     resolution: {integrity: sha512-OSs33Z9yWr148JZcbZd5WiAXhh/n9z8TxQcdMhIOlpN9AhWpLfvVFO73+m77bBABQMaY9XSvIa+qk0jlI7Gcaw==}
+    hasBin: true
+
+  node-gyp-build@4.8.2:
+    resolution: {integrity: sha512-IRUxE4BVsHWXkV/SFOut4qTlagw2aM8T5/vnTsmrHJvVoKueJHRc/JaFND7QDDc61kLYUJ6qlZM3sqTSyx2dTw==}
     hasBin: true
 
   normalize-path@3.0.0:
@@ -544,6 +555,14 @@ packages:
     resolution: {integrity: sha512-/DdQaPCCOrOYGp9FxGdhFUnHIrjhfbYatQXgNIcmaAOpPunpnDj2vsO/H+svsfQLaFsQ1C+BjgPhpbV28zka1w==}
     engines: {node: '>=12.0.0'}
     hasBin: true
+
+  tree-sitter-embedded-template@0.23.0:
+    resolution: {integrity: sha512-IVRwVZ1F9oO4euh6pn3Dl57mZVlnfsgFnub3sKKn8Vtz93rTPNr+uPFf01wfLOCYGAW8o3BJ6OdHueuCfgPmrA==}
+    peerDependencies:
+      tree-sitter: ^0.21.0
+    peerDependenciesMeta:
+      tree-sitter:
+        optional: true
 
   tree-sitter@0.21.1:
     resolution: {integrity: sha512-7dxoA6kYvtgWw80265MyqJlkRl4yawIjO7S5MigytjELkX43fV2WsAXzsNfO7sBpPPCF5Gp0+XzHk0DwLCq3xQ==}
@@ -975,7 +994,11 @@ snapshots:
 
   node-addon-api@8.0.0: {}
 
+  node-addon-api@8.1.0: {}
+
   node-gyp-build@4.8.1: {}
+
+  node-gyp-build@4.8.2: {}
 
   normalize-path@3.0.0: {}
 
@@ -1139,6 +1162,13 @@ snapshots:
       is-number: 7.0.0
 
   tree-sitter-cli@0.23.0: {}
+
+  tree-sitter-embedded-template@0.23.0(tree-sitter@0.21.1):
+    dependencies:
+      node-addon-api: 8.1.0
+      node-gyp-build: 4.8.2
+    optionalDependencies:
+      tree-sitter: 0.21.1
 
   tree-sitter@0.21.1:
     dependencies:
