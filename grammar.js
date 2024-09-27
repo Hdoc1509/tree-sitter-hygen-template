@@ -28,8 +28,6 @@ module.exports = grammar(embedded_template, {
       seq(repeat1(choice($.directive, $.output_directive, $.string_value))),
     string_value: () => /[^<\n]+/,
 
-    body: ($) => repeat1($.content),
-
-    content: () => /.+/,
+    body: ($) => repeat1(choice($.content)),
   },
 });

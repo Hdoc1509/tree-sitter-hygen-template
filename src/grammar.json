@@ -40,8 +40,24 @@
       }
     },
     "content": {
-      "type": "PATTERN",
-      "value": ".+"
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "REPEAT1",
+        "content": {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "[^<]+|<"
+            },
+            {
+              "type": "STRING",
+              "value": "<%%"
+            }
+          ]
+        }
+      }
     },
     "directive": {
       "type": "SEQ",
@@ -316,8 +332,13 @@
     "body": {
       "type": "REPEAT1",
       "content": {
-        "type": "SYMBOL",
-        "name": "content"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "content"
+          }
+        ]
       }
     }
   },

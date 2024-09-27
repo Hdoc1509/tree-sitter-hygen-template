@@ -25,6 +25,11 @@
     "fields": {}
   },
   {
+    "type": "content",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "directive",
     "named": true,
     "fields": {},
@@ -166,6 +171,10 @@
     "named": false
   },
   {
+    "type": "<%%",
+    "named": false
+  },
+  {
     "type": "<%-",
     "named": false
   },
@@ -204,10 +213,6 @@
   {
     "type": "_%>",
     "named": false
-  },
-  {
-    "type": "content",
-    "named": true
   },
   {
     "type": "key",
