@@ -19,14 +19,14 @@
   "scripts": {
     "dev": "pnpm run _test:watchable --watch",
     "dev:one": "pnpm run _test:watchable --watch -- --filter",
-    "generate": "wireit",
+    "gen": "wireit",
     "hl": "tree-sitter highlight",
     "install": "node-gyp-build",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js",
-    "test:all": "pnpm run generate && tree-sitter test",
-    "test:one": "pnpm run generate && tree-sitter test --filter",
+    "test:all": "pnpm run gen && tree-sitter test",
+    "test:one": "pnpm run gen && tree-sitter test --filter",
     "_test:watchable": "wireit"
   },
   "repository": "github:Hdoc1509/tree-sitter-hygen-template",
@@ -69,13 +69,13 @@
     }
   ],
   "wireit": {
-    "generate": {
+    "gen": {
       "command": "tree-sitter generate"
     },
     "_test:watchable": {
       "command": "clear && echo 'Running parser tests...\n' && tree-sitter test",
       "dependencies": [
-        "generate"
+        "gen"
       ],
       "files": [
         "grammar.js",
