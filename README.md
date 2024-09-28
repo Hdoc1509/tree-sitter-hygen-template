@@ -53,7 +53,7 @@ Tree-sitter grammar for Hygen templates.
 
 3. Run `:TSInstall hygen_template` to install the parser.
 
-4. Copy the queries from [`neovim/queries`](/docs/copying-queries.md) to
+4. Copy the queries from [`queries`](./neovim/queries/) directory to
    `queries/hygen_template` directory in your `neovim` configuration directory:
 
    | With                  | Path                    |
