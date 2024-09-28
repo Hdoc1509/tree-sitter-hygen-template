@@ -60,7 +60,11 @@
   "tree-sitter": [
     {
       "scope": "source.hygen_template",
-      "injection-regex": "^hygen_template$"
+      "file-types": [
+        "hygen"
+      ],
+      "injection-regex": "^hygen_template$",
+      "highlights": "queries/highlights.scm"
     }
   ],
   "wireit": {
