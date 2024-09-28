@@ -70,7 +70,10 @@
   ],
   "wireit": {
     "gen": {
-      "command": "tree-sitter generate"
+      "command": "tree-sitter generate",
+      "files": [
+        "grammar.js"
+      ]
     },
     "_test:watchable": {
       "command": "clear && echo 'Running parser tests...\n' && tree-sitter test",
