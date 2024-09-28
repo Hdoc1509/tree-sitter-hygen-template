@@ -20,6 +20,7 @@
     "dev": "pnpm run _test:watchable --watch",
     "dev:one": "pnpm run _test:watchable --watch -- --filter",
     "generate": "wireit",
+    "hl": "tree-sitter highlight",
     "install": "node-gyp-build",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
