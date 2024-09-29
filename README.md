@@ -84,7 +84,7 @@ app.run();
 4. Copy the [`filetype.vim`](./neovim/ftdetect.vim) file to your `neovim`
    configuration directory `ftdetect` subdirectory as `hygen.vim`.
 
-4. Copy the [`directive.lua`](./neovim/hygen-directive.lua) file to your `neovim`
+5. Copy the [`directive.lua`](./neovim/hygen-directive.lua) file to your `neovim`
    configuration directory and add the following to your `init.lua` or
    respective config file:
 
