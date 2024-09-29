@@ -41,19 +41,9 @@ Tree-sitter grammar for Hygen templates.
    }
    ```
 
-2. Add the `hygen` filetype to your `init.lua` or respective config file:
+2. Run `:TSInstall hygen_template` to install the parser.
 
-   ```lua
-   vim.filetype.add({
-     extension = {
-       hygen = "hygen",
-     }
-   })
-   ```
-
-3. Run `:TSInstall hygen_template` to install the parser.
-
-4. Copy the queries from [`queries`](./neovim/queries/) directory to
+3. Copy the queries from [`queries`](./neovim/queries/) directory to
    `queries/hygen_template` directory in your `neovim` configuration directory:
 
    | With                  | Path                    |
@@ -62,7 +52,10 @@ Tree-sitter grammar for Hygen templates.
    | Windows               | `~/AppData/Local/nvim`  |
    | `XDG_CONFIG_HOME` set | `$XDG_CONFIG_HOME/nvim` |
 
-5. Copy the [`directive.lua`](./neovim/hygen-directive.lua) file to your `neovim`
+4. Copy the [`filetype.vim`](./neovim/ftdetect.vim) file to your `neovim`
+   configuration directory `ftdetect` subdirectory as `hygen.vim`.
+
+4. Copy the [`directive.lua`](./neovim/hygen-directive.lua) file to your `neovim`
    configuration directory and add the following to your `init.lua` or
    respective config file:
 
