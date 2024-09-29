@@ -169,7 +169,7 @@ to: target-path/hello.txt
 
 #### Highlights
 
-- [ ] only highlight [valid frontmatter properties for `Hygen`](https://www.hygen.io/docs/templates/#all-frontmatter-properties)
+- [x] only highlight [valid frontmatter properties for `Hygen`](https://www.hygen.io/docs/templates/#all-frontmatter-properties)
 - [x] metadata property key as `@property`
 - [x] metadata property value as `@string`
 

@@ -3,7 +3,16 @@
 (template
   (frontmatter
     (metadata
-      (key) @property)))
+      ((key) @property
+        (#any-of? @property
+          "to"
+          "from"
+          "force"
+          "unless_exists"
+          "inject"
+          "after"
+          "skip_if"
+          "sh")))))
 
 (template
   (frontmatter
