@@ -10,6 +10,35 @@ Tree-sitter grammar for Hygen templates.
   - with the parser, `javascript` parser and dinamic injection
 -->
 
+## Specification
+
+### Template structure
+
+Hygen templates has two main parts:
+
+```
+---
+{frontmatter}
+---
+{body}
+```
+
+### Template with `ejs` tags
+
+Also, Hygen templates can have `ejs` tags in `frontmatter` and `body`.
+
+```ejs
+---
+to: apps/<%= name %>/src/index.ts
+---
+
+import { <%= name %> } from './app-generator';
+
+const app = new <%= name %>();
+
+app.run();
+```
+
 ## Usage in Editors
 
 ### Neovim
