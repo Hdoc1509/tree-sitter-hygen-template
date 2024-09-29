@@ -62,6 +62,24 @@ Tree-sitter grammar for Hygen templates.
    | Windows               | `~/AppData/Local/nvim`  |
    | `XDG_CONFIG_HOME` set | `$XDG_CONFIG_HOME/nvim` |
 
+5. Copy the [`directive.lua`](./neovim/hygen-directive.lua) file to your `neovim`
+   configuration directory and add the following to your `init.lua` or
+   respective config file:
+
+   ```lua
+   local hygen_directive = require('path-to.hygen-directive')
+
+   local directives = { hygen_directive }
+
+   for _, directive in ipairs(directives) do
+     vim.treesitter.query.add_directive(
+       directive.name,
+       directive.callback,
+       directive.options
+     )
+   end
+   ```
+
 ## References
 
 - [Hygen repository](https://github.com/jondot/hygen)
@@ -110,7 +128,7 @@ Tree-sitter grammar for Hygen templates.
 #### Injections
 
 - [x] inject `javascript` parser in `code` nodes _(`code` node comes from `embedded-template`)_
-- [ ] dynamic injection in `body.content` node by using file extension, e.g.:
+- [x] dynamic injection in `body.content` node by using file extension, e.g.:
 
   - `file.js.hygen` will be highlighted with `javascript` parser
   - `file.astro.hygen` will be highlighted with `astro` parser
