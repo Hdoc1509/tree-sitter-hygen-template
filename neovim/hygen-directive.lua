@@ -1,6 +1,6 @@
 local ts_parsers = require("nvim-treesitter.parsers")
 
-local has_v_0_10 = vim.fn.has("nvim-0.10")
+local has_v_0_10 = vim.fn.has("nvim-0.10") == 1
 local options = nil
 
 -- see changed features in treesitter section
