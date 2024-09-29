@@ -2,8 +2,8 @@
 
 (template
   (frontmatter
-    (metadata (
-      (key) @property))))
+    (metadata
+      (key) @property)))
 
 (template
   (frontmatter
