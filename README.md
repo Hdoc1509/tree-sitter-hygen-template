@@ -39,6 +39,28 @@ const app = new <%= name %>();
 app.run();
 ```
 
+### Template without `frontmatter`
+
+With the following template, located at `${templates}/shared-hello.txt`:
+
+```ejs
+Hello, <%= name %>!
+```
+
+This allows to have shareable templates for different [`generators`](https://www.hygen.io/docs/generators/)
+that can be used like the following:
+
+```ejs
+---
+to: target-path/hello.txt
+---
+
+<%- include(`${templates}/shared-hello.txt`) %>
+```
+
+> [!NOTE]
+> You can read more about `${templates}` variable in [`Predefined Variables section`](https://www.hygen.io/docs/templates#predefined-variables)
+
 ## Usage in Editors
 
 ### Neovim

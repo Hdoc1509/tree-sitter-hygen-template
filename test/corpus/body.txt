@@ -1,28 +1,16 @@
 ===========||
 Simple Body
 ===========||
----
-to: app/emails/example.html
----
-
 test body
-
 ---||
 
 (template
-  (frontmatter
-    (metadata
-      (key)
-      (value (string_value))))
   (body
     (content)))
 
 ==================||
 Body with directives
 ==================||
----
-to: example-text.txt
----
 <%
   Name = "John Doe"
 -%>
@@ -33,12 +21,7 @@ Hello <%= Name %>!
 ---||
 
 (template
-  (frontmatter
-    (metadata
-      (key)
-      (value (string_value))))
   (body
-    (content)
     (directive (code))
     (content)
     (output_directive (code))
