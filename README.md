@@ -149,16 +149,10 @@ to: target-path/hello.txt
 
 ### Development
 
-<!-- TODO: read -->
-<!-- - https://tree-sitter.github.io/tree-sitter/creating-parsers -->
-<!-- - https://gist.github.com/Aerijo/df27228d70c633e088b0591b8857eeef -->
-
-<!-- TODO: implement Test-Driven Development -->
-<!-- - continue with frontmatter https://www.hygen.io/docs/templates#frontmatter -->
-
 <!-- NOTE: shoud I install eslint-config-treesitter? -->
 
-- [ ] add CI workflow (grammar tests)
+- [x] add CI workflow (grammar tests)
+- [ ] add Publish workflow
   <!-- NOTE: see: -->
   <!-- - https://github.com/tree-sitter-grammars/template/blob/master/.github/workflows/publish.yml -->
   <!-- - https://github.com/alex-pinkus/tree-sitter-swift/issues/149 -->
