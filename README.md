@@ -84,15 +84,28 @@ to: target-path/hello.txt
    ```lua
    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
+   -- NOTE: add the parser to `parser_config` before calling `setup()`
    parser_config.hygen_template = {
      install_info = {
        url = "https://github.com/Hdoc1509/tree-sitter-hygen-template",
        files = { "src/parser.c" },
        generate_requires_npm = true,
+       revision = '<latest-release-commit-hash>'
      },
      filetype = "hygen",
    }
+
+   require('nvim-treesitter.configs').setup({
+     ensure_installed = {
+       ...other_parsers,
+       'hygen_template',
+     },
+     ...other_options
+   })
    ```
+
+   > [!NOTE]
+   > `<latest-release-commit-hash>` is the commit hash of the latest release
 
 2. Run `:TSInstall hygen_template` to install the parser.
 
