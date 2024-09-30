@@ -72,6 +72,8 @@ to: target-path/hello.txt
 
 #### Optional parsers
 
+- [`bash`](https://github.com/tree-sitter/tree-sitter-bash):
+  highlight of `metadata.value` when `metadata.key` is `sh`
 - [`javascript`](https://github.com/tree-sitter/tree-sitter-javascript):
   highlight of `code` nodes
 
