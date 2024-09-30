@@ -83,21 +83,19 @@ to: target-path/hello.txt
        files = { "src/parser.c" },
        generate_requires_npm = true,
        revision = '<latest-release-commit-hash>'
+       -- commit-hash can be short or long form
      },
      filetype = "hygen",
    }
 
    require('nvim-treesitter.configs').setup({
      ensure_installed = {
-       ...other_parsers,
+       --- other parsers
        'hygen_template',
      },
-     ...other_options
+     -- other options
    })
    ```
-
-   > [!NOTE]
-   > `<latest-release-commit-hash>` is the commit hash of the latest release
 
 2. Run `:TSInstall hygen_template` to install the parser.
 
