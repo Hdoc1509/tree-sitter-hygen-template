@@ -27,13 +27,8 @@
           ]
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "body"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "body"
         }
       ]
     },

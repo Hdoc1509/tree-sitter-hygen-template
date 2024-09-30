@@ -10,7 +10,7 @@ module.exports = grammar(embedded_template, {
   name: "hygen_template",
 
   rules: {
-    template: ($) => choice(seq($.frontmatter, optional($.body)), seq($.body)),
+    template: ($) => choice(seq($.frontmatter, optional($.body)), $.body),
 
     frontmatter: ($) =>
       seq(
