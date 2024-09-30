@@ -2,14 +2,6 @@
 
 Tree-sitter grammar for Hygen templates.
 
-<!--
-  TODO: add images of syntax highlighting
-  - without the parser
-  - with the parser
-  - with the parser and `javascript` parser
-  - with the parser, `javascript` parser and dinamic injection
--->
-
 ## Specification
 
 ### Template structure
@@ -149,6 +141,13 @@ to: target-path/hello.txt
 - [Hygen website](https://www.hygen.io/)
 
 ## Roadmap
+
+### Documentation
+
+- [ ] add screenshots of syntax highlighting:
+  - [ ] only `frontmatter`
+  - [ ] only `body`
+  - [ ] with `frontmatter` and `body`
 
 ### Development
 
