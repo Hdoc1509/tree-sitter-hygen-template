@@ -26,8 +26,8 @@
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js",
-    "test:all": "pnpm run gen && tree-sitter test",
-    "test:one": "pnpm run gen && tree-sitter test --filter",
+    "test:all": "tree-sitter generate && tree-sitter test",
+    "test:one": "tree-sitter generate && tree-sitter test --filter",
     "_test:watchable": "wireit"
   },
   "repository": "github:Hdoc1509/tree-sitter-hygen-template",
