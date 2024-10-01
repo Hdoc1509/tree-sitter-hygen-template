@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-hygen_template
+module github.com/Hdoc1509/tree-sitter-hygen-template
 
 go 1.23
 
