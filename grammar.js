@@ -1,3 +1,9 @@
+/**
+ * @file Hygen template grammar for tree-sitter-cli
+ * @author Héctor Ochoa <hector.ochoa.dev@gmail.com>
+ * @license MIT
+ */
+
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
