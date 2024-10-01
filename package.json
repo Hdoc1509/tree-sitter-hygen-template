@@ -22,6 +22,7 @@
     "gen": "wireit",
     "hl": "tree-sitter highlight",
     "install": "node-gyp-build",
+    "parser:release": "bash ./scripts/release.sh",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js",
