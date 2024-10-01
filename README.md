@@ -152,7 +152,7 @@ to: target-path/hello.txt
 <!-- NOTE: shoud I install eslint-config-treesitter? -->
 
 - [x] add CI workflow (grammar tests)
-- [ ] add Publish workflow
+- [x] add Publish workflow
   <!-- NOTE: see: -->
   <!-- - https://github.com/tree-sitter-grammars/template/blob/master/.github/workflows/publish.yml -->
   <!-- - https://github.com/alex-pinkus/tree-sitter-swift/issues/149 -->
