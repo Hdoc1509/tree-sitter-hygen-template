@@ -87,8 +87,7 @@ to: target-path/hello.txt
        url = "https://github.com/Hdoc1509/tree-sitter-hygen-template",
        files = { "src/parser.c" },
        generate_requires_npm = true,
-       revision = '<latest-release-commit-hash>'
-       -- commit-hash can be short or long form
+       revision = 'release',
      },
      filetype = "hygen",
    }
@@ -158,12 +157,6 @@ to: target-path/hello.txt
 
 - [x] add CI workflow (grammar tests)
 - [x] add Publish workflow
-  <!-- NOTE: see: -->
-  <!-- - https://github.com/tree-sitter-grammars/template/blob/master/.github/workflows/publish.yml -->
-  <!-- - https://github.com/alex-pinkus/tree-sitter-swift/issues/149 -->
-  <!-- - https://github.com/DerekStride/tree-sitter-sql/pull/100 -->
-  <!-- - https://github.com/tree-sitter-perl/tree-sitter-perl/blob/master/.github/workflows/release.yml -->
-  <!--   https://github.com/tree-sitter-perl/tree-sitter-perl/blob/master/copy-to-release -->
 
 ### Testing
 
