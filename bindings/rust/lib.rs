@@ -5,6 +5,15 @@
 //!
 //! ```
 //! let code = r#"
+//! ---
+//! to: apps/<%= name %>/src/index.ts
+//! ---
+//!
+//! import { <%= name %> } from './app-generator';
+//!
+//! const app = new <%= name %>();
+//!
+//! app.run();
 //! "#;
 //! let mut parser = tree_sitter::Parser::new();
 //! let language = tree_sitter_hygen_template::LANGUAGE;
