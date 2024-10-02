@@ -21,7 +21,7 @@
     "dev:one": "pnpm run _test:watchable --watch -- --filter",
     "gen": "wireit",
     "hl": "tree-sitter highlight",
-    "install": "node-gyp-build",
+    "install": "tree-sitter generate && node-gyp-build",
     "parser:release": "bash ./scripts/release.sh",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
