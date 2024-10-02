@@ -43,10 +43,10 @@ jobs:
 
       # needed because of parser dependencies
       - name: Install dependencies
-        run: npm install --frozen-lockfile
+        run: npm ci
 
       - name: Run tests
         uses: tree-sitter/parser-test-action@v2
         with:
-          test-parser-cmd: npm tree-sitter test
+          test-parser-cmd: npx tree-sitter test
           test-rust: ${{runner.os == 'Linux'}}

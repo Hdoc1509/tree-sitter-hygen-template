@@ -1,4 +1,4 @@
-npm changeset version
+npx changeset version
 
 pyproject_line=8
 cargo_line=4
