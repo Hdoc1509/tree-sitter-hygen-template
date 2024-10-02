@@ -3,11 +3,7 @@ npx changeset version
 pyproject_line=8
 cargo_line=4
 
-new_version=$(
-  grep --max-count=1 --fixed-strings version package.json |
-    awk -F: '{ print $2 }' |
-    sed 's/[",]//g'
-)
+new_version=$(head --lines=3 CHANGELOG.md | tail --lines=1 | awk '{ print $2 }')
 
 update_version_in() {
   target_file=$1
