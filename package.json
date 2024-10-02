@@ -6,7 +6,6 @@
   "description": "Hygen template grammar for tree-sitter",
   "main": "bindings/node",
   "types": "bindings/node",
-  "packageManager": "pnpm@9.6.0",
   "files": [
     "grammar.js",
     "binding.gyp",
@@ -17,8 +16,8 @@
     "*.wasm"
   ],
   "scripts": {
-    "dev": "pnpm run _test:watchable --watch",
-    "dev:one": "pnpm run _test:watchable --watch -- --filter",
+    "dev": "npm run _test:watchable --watch",
+    "dev:one": "npm run _test:watchable --watch -- --filter",
     "gen": "wireit",
     "hl": "tree-sitter highlight",
     "install": "tree-sitter generate && node-gyp-build",

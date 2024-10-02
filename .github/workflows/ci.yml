@@ -35,20 +35,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up pnpm
-        uses: pnpm/action-setup@v4
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
+          cache: npm
 
       # needed because of parser dependencies
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm install --frozen-lockfile
 
       - name: Run tests
         uses: tree-sitter/parser-test-action@v2
         with:
-          test-parser-cmd: pnpm tree-sitter test
+          test-parser-cmd: npm tree-sitter test
           test-rust: ${{runner.os == 'Linux'}}
