@@ -50,4 +50,5 @@ jobs:
       - name: Run tests
         uses: tree-sitter/parser-test-action@v2
         with:
+          test-parser-cmd: pnpm tree-sitter test
           test-rust: ${{runner.os == 'Linux'}}
