@@ -1,0 +1,1 @@
+**_This release contains backwards-incompatible changes._** To avoid picking up releases like this, you should set a exact version or use a version range syntax that only accepts \`{{ compatible_semver }}\` upgrades, i.e. {{ previous_version }}, in your \`package.json\`. See `npm` documentation about [semver](https://docs.npmjs.com/cli/v6/using-npm/semver/) for more information.
