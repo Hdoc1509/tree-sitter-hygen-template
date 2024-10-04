@@ -1,26 +1,25 @@
 # package versioning files
 pyproject_line=8
 cargo_line=4
-previous_version="invalid-version"
+previous_version="0.0.0"
+
+trim() { echo "$@" | sed -e 's/^[[:blank:]]*//;s/[[:blank:]]*$//'; }
 
 get_version_from_changelog() {
   head --lines=3 CHANGELOG.md | tail --lines=1 | awk '{ print $2 }'
 }
 get_version_from_package_json() {
-  grep --max-count=1 --fixed-strings version package.json |
-    awk -F: '{ print $2 }' |
-    sed -e 's/[",]//g' -e 's/^ *//' -e 's/ *$//'
+  trim "$(
+    grep --max-count=1 --fixed-strings version package.json |
+      awk -F: '{ print $2 }' |
+      sed -e 's/[",]//g'
+  )"
 }
 
 if [[ -f CHANGELOG.md ]]; then
   previous_version=$(get_version_from_changelog)
 else
   previous_version=$(get_version_from_package_json)
-fi
-
-if [[ $previous_version == "invalid-version" ]]; then
-  echo "[RELEASE]: No version found in package.json or CHANGELOG.md"
-  exit 1
 fi
 
 # changes since last release
@@ -44,10 +43,7 @@ fi
 npx changeset version
 
 new_version=$(get_version_from_changelog)
-major_change_count=$(
-  head --line=5 CHANGELOG.md |
-    grep --count --fixed-strings "### Major"
-)
+major_change_count=$(head --line=5 CHANGELOG.md | grep --count "Major")
 breaking_changes_message=""
 
 # NOTE: uncomment to test
