@@ -6,8 +6,6 @@ cargo_toml_version_line=4
 pyproject_toml_file=$REPO_ROOT/pyproject.toml
 pyproject_toml_version_line=8
 
-version_regex='[0-9]\.[0-9]\.[0-9]'
-
 get_version_from_changelog() {
   head --lines=3 "$changelog_file" | tail --lines=1 | awk '{ print $2 }'
 }
@@ -49,12 +47,12 @@ get_last_tag() { git describe --tags --abbrev=0; }
 
 update_new_version() { new_version="$(get_version_from_changelog)"; }
 
+version_regex='[0-9]\+\.[0-9]\+\.[0-9]\+'
+
 update_package_files_version() {
   echo
   echo "[RELEASE]: Updating package files version..."
 
-  # TODO: at least on digit per version part
-  # sed -i "$target_line s/[0-9]\+\.[0-9]\+\.[0-9]\+/$new_version/" "$target_file"
   sed -i "$cargo_toml_version_line s/$version_regex/$new_version/" "$cargo_toml_file"
   sed -i "$pyproject_toml_version_line s/$version_regex/$new_version/" "$pyproject_toml_file"
 
