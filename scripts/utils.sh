@@ -47,7 +47,7 @@ set_changelog_breaking_changes_message() {
 
 get_last_tag() { git describe --tags --abbrev=0; }
 
-update_new_version() { new_version=$1; }
+update_new_version() { new_version="$(get_version_from_changelog)"; }
 
 update_package_files_version() {
   echo

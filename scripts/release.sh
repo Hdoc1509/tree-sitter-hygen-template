@@ -8,7 +8,7 @@ previous_version=$(get_version_from_changelog)
 # genrate changelog and update version
 npx changeset version
 
-update_new_version "$(get_version_from_changelog)"
+update_new_version
 major_change_count=$(head --line=5 CHANGELOG.md | grep --count "Major")
 
 # NOTE: uncomment to test

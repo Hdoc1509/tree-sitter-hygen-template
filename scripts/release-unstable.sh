@@ -12,7 +12,7 @@ if ! [[ -f CHANGELOG.md ]]; then
   npx changeset version
 
   # changelog is now generated
-  update_new_version "$(get_version_from_changelog)"
+  update_new_version
   set_changelog_initial_release_message
   update_package_files_version
 
@@ -35,7 +35,7 @@ echo
 # genrate changelog and update version
 npx changeset version
 
-update_new_version "$(get_version_from_changelog)"
+update_new_version
 
 # NOTE: uncomment to test
 # breaking_changes_count=1
