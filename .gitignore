@@ -2,7 +2,6 @@
 /src/
 
 # Rust artifacts
-Cargo.lock
 target/
 
 # Node artifacts
@@ -16,7 +15,6 @@ node_modules/
 Package.resolved
 
 # Go artifacts
-go.sum
 _obj/
 
 # Python artifacts
