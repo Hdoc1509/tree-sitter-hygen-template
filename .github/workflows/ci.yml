@@ -10,6 +10,7 @@ on:
       - bindings/**
       - binding.gyp
       - .github/workflows/ci.yml
+      - package.json
   pull_request:
     paths:
       - grammar.js
@@ -18,6 +19,7 @@ on:
       - bindings/**
       - binding.gyp
       - .github/workflows/ci.yml
+      - package.json
 
 concurrency:
   group: ${{github.workflow}}-${{github.ref}}
