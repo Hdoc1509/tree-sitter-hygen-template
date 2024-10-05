@@ -1,0 +1,37 @@
+{
+  "grammars": [
+    {
+      "name": "hygen-template",
+      "camelcase": "HygenTemplate",
+      "scope": "source.hygen_template",
+      "path": ".",
+      "file-types": [
+        "hygen"
+      ],
+      "highlights": "queries/highlights.scm",
+      "injection-regex": "^hygen_template$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.1",
+    "license": "MIT",
+    "description": "Hygen Template grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Héctor Ochoa",
+        "email": "hector.ochoa.dev@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/Hdoc1509/tree-sitter-hygen-template"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

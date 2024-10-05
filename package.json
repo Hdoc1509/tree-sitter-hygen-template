@@ -38,7 +38,7 @@
     "prebuildify": "6.0.1",
     "prettier": "3.3.3",
     "tree-sitter": "0.21.1",
-    "tree-sitter-cli": "0.23.0",
+    "tree-sitter-cli": "0.24.1",
     "wireit": "0.14.9"
   },
   "peerDependencies": {
@@ -51,7 +51,7 @@
   },
   "scripts": {
     "dev": "npm run _test:watchable --watch",
-    "dev:one": "npm run _test:watchable --watch -- --filter",
+    "dev:one": "npm run _test:watchable --watch -- --include",
     "gen": "wireit",
     "hl": "tree-sitter highlight",
     "install": "tree-sitter generate && node-gyp-build",
@@ -60,19 +60,9 @@
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js",
     "test:all": "tree-sitter generate && tree-sitter test",
-    "test:one": "tree-sitter generate && tree-sitter test --filter",
+    "test:one": "tree-sitter generate && tree-sitter test --include",
     "_test:watchable": "wireit"
   },
-  "tree-sitter": [
-    {
-      "scope": "source.hygen_template",
-      "file-types": [
-        "hygen"
-      ],
-      "injection-regex": "^hygen_template$",
-      "highlights": "queries/highlights.scm"
-    }
-  ],
   "wireit": {
     "gen": {
       "command": "tree-sitter generate",
