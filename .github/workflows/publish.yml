@@ -34,6 +34,8 @@ jobs:
   gh-pages:
     runs-on: ubuntu-22.04
     if: github.repository == 'Hdoc1509/tree-sitter-hygen-template'
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
