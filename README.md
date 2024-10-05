@@ -5,13 +5,14 @@
 [![npm][npm]](https://www.npmjs.com/package/tree-sitter-hygen-template)
 [![pypi][pypi]](https://pypi.org/project/tree-sitter-hygen-template)
 
-Tree-sitter grammar for Hygen templates.
+[Tree-sitter](https://github.com/tree-sitter/tree-sitter) grammar for
+[Hygen](https://www.hygen.io/) templates.
 
 ## Specification
 
 ### Template structure
 
-Hygen templates has two main parts:
+`Hygen` templates has two main parts:
 
 ```
 ---
@@ -22,7 +23,7 @@ Hygen templates has two main parts:
 
 ### Template with `ejs` tags
 
-Also, Hygen templates can have `ejs` tags in `frontmatter` and `body`.
+`Hygen` templates can have `ejs` tags in `frontmatter` and `body`.
 
 ```ejs
 ---
@@ -44,8 +45,8 @@ With the following template, located at `${templates}/shared-hello.txt`:
 Hello, <%= name %>!
 ```
 
-This allows to have shareable templates for different [`generators`](https://www.hygen.io/docs/generators/)
-that can be used like the following:
+You can use it as a shareable template for different
+[`generators`](https://www.hygen.io/docs/generators/):
 
 ```ejs
 ---
