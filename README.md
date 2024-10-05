@@ -8,57 +8,6 @@
 [Tree-sitter](https://github.com/tree-sitter/tree-sitter) grammar for
 [Hygen](https://www.hygen.io/) templates.
 
-## Specification
-
-### Template structure
-
-`Hygen` templates has two main parts:
-
-```
----
-{frontmatter}
----
-{body}
-```
-
-### Template with `ejs` tags
-
-`Hygen` templates can have `ejs` tags in `frontmatter` and `body`.
-
-```ejs
----
-to: apps/<%= name %>/src/index.ts
----
-
-import { <%= name %> } from './app-generator';
-
-const app = new <%= name %>();
-
-app.run();
-```
-
-### Template without `frontmatter`
-
-With the following template, located at `${templates}/shared-hello.txt`:
-
-```ejs
-Hello, <%= name %>!
-```
-
-You can use it as a shareable template for different
-[`generators`](https://www.hygen.io/docs/generators/):
-
-```ejs
----
-to: target-path/hello.txt
----
-
-<%- include(`${templates}/shared-hello.txt`) %>
-```
-
-> [!NOTE]
-> You can read more about `${templates}` variable in [`Predefined Variables section`](https://www.hygen.io/docs/templates#predefined-variables)
-
 ## Usage in Editors
 
 ### Neovim
@@ -102,9 +51,7 @@ to: target-path/hello.txt
    })
    ```
 
-2. Run `:TSInstall hygen_template` to install the parser.
-
-3. Copy the queries from [`queries`](./neovim/queries/) directory to
+2. Copy the queries from [`queries`](./neovim/queries/) directory to
    `queries/hygen_template` directory in your `neovim` configuration directory:
 
    | With                  | Path                    |
@@ -113,14 +60,14 @@ to: target-path/hello.txt
    | Windows               | `~/AppData/Local/nvim`  |
    | `XDG_CONFIG_HOME` set | `$XDG_CONFIG_HOME/nvim` |
 
-4. Copy the [`filetype.vim`](./neovim/ftdetect.vim) file to your `neovim`
+3. Copy the [`filetype.vim`](./neovim/ftdetect.vim) file to your `neovim`
    configuration directory `ftdetect` subdirectory as `hygen.vim`.
 
    > [!NOTE]
    > `hygen` filetype will match all files with `name.ext.hygen` pattern, where
    > `ext` will be used to extract the parser to be injected.
 
-5. Copy the [`directive.lua`](./neovim/hygen-directive.lua) file to your `neovim`
+4. Copy the [`directive.lua`](./neovim/hygen-directive.lua) file to your `neovim`
    configuration directory and add the following to your `init.lua` or
    respective config file:
 
@@ -142,52 +89,6 @@ to: target-path/hello.txt
 
 - [Hygen repository](https://github.com/jondot/hygen)
 - [Hygen website](https://www.hygen.io/)
-
-## Roadmap
-
-### Documentation
-
-- [ ] add screenshots of syntax highlighting:
-  - [ ] only `frontmatter`
-  - [ ] only `body`
-  - [ ] with `frontmatter` and `body`
-
-### Development
-
-<!-- NOTE: shoud I install eslint-config-treesitter? -->
-
-- [x] add CI workflow (grammar tests)
-- [x] add Publish workflow
-
-### Testing
-
-- [x] template can be only `frontmatter`
-
-### Grammar
-
-- [x] extend [embedded template grammar](https://github.com/tree-sitter/tree-sitter-embedded-template)
-- [x] frontmatter pair of property and value
-- [x] rest of template that is not `frontmatter` will be `body` node
-- [x] `code` node can be present in frontmatter property value
-
-### Queries
-
-#### Highlights
-
-- [x] only highlight [valid frontmatter properties for `Hygen`](https://www.hygen.io/docs/templates/#all-frontmatter-properties)
-- [x] metadata property key as `@property`
-- [x] metadata property value as `@string`
-
-#### Injections
-
-- [x] inject `javascript` parser in `code` nodes _(`code` node comes from `embedded-template`)_
-- [x] dynamic injection in `body.content` node by using file extension, e.g.:
-
-  - `file.js.hygen` will be highlighted with `javascript` parser
-  - `file.astro.hygen` will be highlighted with `astro` parser
-  - `file.md.hygen` will be highlighted with `markdown` parser
-
-  _Target parser wil be extracted from `file-name.(ext).hygen`_
 
 [ci]: https://github.com/Hdoc1509/tree-sitter-hygen-template/actions/workflows/ci.yml/badge.svg
 [crates]: https://img.shields.io/crates/v/tree-sitter-hygen-template?logo=rust
