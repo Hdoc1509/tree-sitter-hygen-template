@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-hygen-template",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Hygen Template grammar for tree-sitter",
   "repository": "github:Hdoc1509/tree-sitter-hygen-template",
   "license": "MIT",
