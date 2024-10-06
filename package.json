@@ -54,7 +54,7 @@
     "dev:one": "npm run _test:watchable --watch -- --include",
     "gen": "wireit",
     "hl": "tree-sitter highlight",
-    "install": "tree-sitter generate && node-gyp-build",
+    "install": "node-gyp-build",
     "parser:release": "bash ./scripts/release-unstable.sh",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",

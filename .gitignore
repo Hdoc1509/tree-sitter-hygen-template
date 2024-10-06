@@ -1,6 +1,3 @@
-# Parser artifacts
-/src/
-
 # Rust artifacts
 target/
 
