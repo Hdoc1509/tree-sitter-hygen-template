@@ -14,9 +14,7 @@
     "incremental",
     "parsing",
     "tree-sitter",
-    "hygen-template",
-    "hygen",
-    "template"
+    "hygen-template"
   ],
   "files": [
     "grammar.js",
