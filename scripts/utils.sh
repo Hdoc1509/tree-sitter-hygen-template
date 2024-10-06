@@ -3,6 +3,8 @@ breaking_changes_message_file=$REPO_ROOT/docs/breaking-change-message.txt
 
 cargo_toml_file=$REPO_ROOT/Cargo.toml
 cargo_toml_version_line=4
+tree_sitter_json_file=$REPO_ROOT/tree-sitter.json
+tree_sitter_json_version_line=16
 pyproject_toml_file=$REPO_ROOT/pyproject.toml
 pyproject_toml_version_line=8
 
@@ -55,6 +57,7 @@ update_package_files_version() {
 
   sed -i "$cargo_toml_version_line s/$version_regex/$new_version/" "$cargo_toml_file"
   sed -i "$pyproject_toml_version_line s/$version_regex/$new_version/" "$pyproject_toml_file"
+  sed -i "$tree_sitter_json_version_line s/$version_regex/$new_version/" "$tree_sitter_json_file"
 
   echo "[RELEASE]: Package files version updated!"
 }
