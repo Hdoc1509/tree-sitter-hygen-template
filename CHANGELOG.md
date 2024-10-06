@@ -1,5 +1,11 @@
 # tree-sitter-hygen-template
 
+## 0.2.1
+
+### Patch Changes
+
+- [847b1a6](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/847b1a620c426547047a5dda8f55b78fbb832188): Bring back generated parser files
+
 ## 0.2.0
 
 ### Minor Changes
