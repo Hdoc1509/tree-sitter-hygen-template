@@ -1,11 +1,11 @@
 [package]
 name = "tree-sitter-hygen-template"
 description = "Hygen Template grammar for tree-sitter"
-version = "0.2.1"
+version = "0.2.2"
 authors = ["Héctor Ochoa <hector.ochoa.dev@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-keywords = ["incremental", "parsing", "tree-sitter", "hygen-template", "hygen", "template"]
+keywords = ["incremental", "parsing", "tree-sitter", "hygen-template"]
 categories = ["parsing", "text-editors"]
 repository = "https://github.com/Hdoc1509/tree-sitter-hygen-template"
 edition = "2021"
