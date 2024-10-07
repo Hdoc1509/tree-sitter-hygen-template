@@ -3,10 +3,7 @@
 // same as @changesets/changelog-git but with commit links in the changelog
 // https://github.com/changesets/changesets/blob/main/packages/changelog-git/src/index.ts
 
-/** @typedef {import('@changesets/types').NewChangesetWithCommit} NewChangesetWithCommit */
-/** @typedef {import('@changesets/types').VersionType} VersionType */
 /** @typedef {import('@changesets/types').ChangelogFunctions} ChangelogFunctions */
-/** @typedef {import('@changesets/types').ModCompWithPackage} ModCompWithPackage */
 
 const COMMIT_BASE_URL =
   "https://github.com/Hdoc1509/tree-sitter-hygen-template/commit";
@@ -15,9 +12,7 @@ const COMMIT_BASE_URL =
 const createCommitLink = (commit) =>
   `[${commit.slice(0, 7)}](${COMMIT_BASE_URL}/${commit})`;
 
-/**
- * @param {NewChangesetWithCommit} changeset
- */
+/** @type {ChangelogFunctions["getReleaseLine"]} */
 const getReleaseLine = async (changeset) => {
   const [firstLine, ...futureLines] = changeset.summary
     .split("\n")
@@ -34,10 +29,7 @@ const getReleaseLine = async (changeset) => {
   return returnVal;
 };
 
-/**
- * @param {NewChangesetWithCommit[]} changesets
- * @param {ModCompWithPackage[]} dependenciesUpdated
- */
+/** @type {ChangelogFunctions["getDependencyReleaseLine"]} */
 const getDependencyReleaseLine = async (changesets, dependenciesUpdated) => {
   if (dependenciesUpdated.length === 0) return "";
 
