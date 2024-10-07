@@ -1,5 +1,11 @@
 # tree-sitter-hygen-template
 
+## 0.2.2
+
+### Patch Changes
+
+- [1200273](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/1200273ec9c6dcbed0987ce2bff49dcae09479fa): Update keywords
+
 ## 0.2.1
 
 ### Patch Changes
