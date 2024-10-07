@@ -1,6 +1,9 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
-  "changelog": "./with-links-changelog.cjs",
+  "changelog": [
+    "./with-links-changelog.cjs",
+    { "repo": "Hdoc1509/tree-sitter-hygen-template" }
+  ],
   "commit": false,
   "fixed": [],
   "linked": [],

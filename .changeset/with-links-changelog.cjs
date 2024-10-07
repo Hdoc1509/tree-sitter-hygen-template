@@ -5,21 +5,31 @@
 
 /** @typedef {import('@changesets/types').ChangelogFunctions} ChangelogFunctions */
 
-const COMMIT_BASE_URL =
-  "https://github.com/Hdoc1509/tree-sitter-hygen-template/commit";
+const GH_BASE_URL = "https://github.com";
 
-/** @param {string} commit */
-const createCommitLink = (commit) =>
-  `[${commit.slice(0, 7)}](${COMMIT_BASE_URL}/${commit})`;
+/**
+ * @param {string} commit
+ * @param {string} repo
+ */
+const createCommitLink = (commit, repo) =>
+  `[${commit.slice(0, 7)}](${GH_BASE_URL}/${repo}/commit/${commit})`;
 
 /** @type {ChangelogFunctions["getReleaseLine"]} */
-const getReleaseLine = async (changeset) => {
+const getReleaseLine = async (changeset, _type, options) => {
+  if (options?.repo == null)
+    throw new Error(
+      "Please provide a `repo` option to this changelog generator, like this:\n" +
+        '"changelog": ["./with-links-changelog.cjs", { "repo": "user/repo" }]',
+    );
+
   const [firstLine, ...futureLines] = changeset.summary
     .split("\n")
     .map((l) => l.trimRight());
 
   let returnVal = `- ${
-    changeset.commit ? `${createCommitLink(changeset.commit)}: ` : ""
+    changeset.commit
+      ? `${createCommitLink(changeset.commit, options.repo)}: `
+      : ""
   }${firstLine}`;
 
   if (futureLines.length > 0) {
@@ -30,13 +40,25 @@ const getReleaseLine = async (changeset) => {
 };
 
 /** @type {ChangelogFunctions["getDependencyReleaseLine"]} */
-const getDependencyReleaseLine = async (changesets, dependenciesUpdated) => {
+const getDependencyReleaseLine = async (
+  changesets,
+  dependenciesUpdated,
+  options,
+) => {
+  if (options?.repo == null)
+    throw new Error(
+      "Please provide a `repo` option to this changelog generator, like this:\n" +
+        '"changelog": ["./with-links-changelog.cjs", { "repo": "user/repo" }]',
+    );
+
   if (dependenciesUpdated.length === 0) return "";
 
   const changesetLinks = changesets.map(
     (changeset) =>
       `- Updated dependencies${
-        changeset.commit ? `${createCommitLink(changeset.commit)}` : ""
+        changeset.commit
+          ? `${createCommitLink(changeset.commit, options.repo)}`
+          : ""
       }`,
   );
 
