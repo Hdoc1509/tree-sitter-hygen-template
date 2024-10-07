@@ -10,7 +10,7 @@
 
 ### Minor Changes
 
-- [f19a136](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/f19a136ff984a78b2b94d141929b6ad080c4659c): Update `tree-sitter-cli` to `v0.24.1`
+- [542fca5](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/542fca56dd2554b53662f9501bf3d202dd0a83ca): Update `tree-sitter-cli` to `v0.24.1`
 
 ## 0.1.1
 
