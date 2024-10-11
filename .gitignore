@@ -38,3 +38,6 @@ dist/
 
 # Wireit stuff
 .wireit
+
+# env
+.env
