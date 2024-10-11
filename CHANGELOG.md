@@ -1,5 +1,12 @@
 # tree-sitter-hygen-template
 
+## 0.2.3
+
+### Patch Changes
+
+- Remove `inject-hygen-tmpl` directive ([`43e21ba`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/43e21ba950265be9c1f085de54c22d4100791328))
+  It can lead to runtime error if this directive is not defined by the consumer.
+
 ## 0.2.2
 
 ### Patch Changes
