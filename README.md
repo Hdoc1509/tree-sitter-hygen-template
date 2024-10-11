@@ -10,6 +10,8 @@
 [Tree-sitter](https://github.com/tree-sitter/tree-sitter) grammar for
 [Hygen](https://www.hygen.io/) templates.
 
+It extends the [`tree-sitter-embedded-template`][embedded-template] grammar.
+
 ## Usage in Editors
 
 ### Neovim
