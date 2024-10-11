@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-hygen-template",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Hygen Template grammar for tree-sitter",
   "repository": "github:Hdoc1509/tree-sitter-hygen-template",
   "license": "MIT",
@@ -31,8 +31,11 @@
     "tree-sitter-embedded-template": "0.23.0"
   },
   "devDependencies": {
-    "@changesets/cli": "2.27.8",
+    "@changesets/cli": "2.27.9",
+    "@changesets/get-github-info": "0.6.0",
     "@changesets/types": "6.0.0",
+    "@svitejs/changesets-changelog-github-compact": "1.1.0",
+    "dotenv": "16.4.5",
     "prebuildify": "6.0.1",
     "prettier": "3.3.3",
     "tree-sitter": "0.21.1",
