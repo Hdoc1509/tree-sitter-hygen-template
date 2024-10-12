@@ -97,7 +97,7 @@ const getReleaseLine = async (changeset, _type, options) => {
       ? ` (${links.commit})`
       : "";
 
-  return `- ${firstLine}${suffix}${futureLines.map((l) => `  ${l}`).join("\n")}`;
+  return `\n- ${firstLine}${suffix}\n${futureLines.map((l) => `  ${l}`).join("\n")}`;
 };
 
 /** @type {ChangelogFunctions} */
