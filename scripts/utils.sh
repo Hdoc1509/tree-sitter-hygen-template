@@ -1,5 +1,5 @@
 changelog_file=$REPO_ROOT/CHANGELOG.md
-breaking_changes_message_file=$REPO_ROOT/docs/breaking-change-message.txt
+breaking_changes_message_file=$REPO_ROOT/scripts/breaking-change-message.txt
 
 cargo_toml_file=$REPO_ROOT/Cargo.toml
 cargo_toml_version_line=4
