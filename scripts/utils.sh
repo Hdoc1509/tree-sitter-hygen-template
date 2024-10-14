@@ -18,29 +18,23 @@ set_changelog_breaking_changes_message() {
   local compatible_semver=$1
   local previous_version=$2
   local previous_version_message
-  local breaking_changes_message
 
   if [[ $compatible_semver == "patch" ]]; then
-    previous_version_message="\`~$previous_version\`"
+    previous_version_message="~$previous_version"
   elif [[ $compatible_semver == "minor" ]]; then
-    previous_version_message="\`^$previous_version\` or \`~$previous_version\`"
+    previous_version_message="^$previous_version or ~$previous_version"
   else
     echo "Invalid compatible semver: $compatible_semver"
     exit 1
   fi
 
-  breaking_changes_message=$(
-    sed \
-      -e "s/{{ compatible_semver }}/$compatible_semver/" \
-      -e "s/{{ previous_version }}/$previous_version_message/" \
-      "$breaking_changes_message_file"
-  )
-
   echo
   echo "[RELEASE]: Breaking changes detected!"
   echo "[RELEASE]: Generating breaking change message..."
 
-  sed -i "4 a$breaking_changes_message\n" CHANGELOG.md
+  sed -i "4r $breaking_changes_message_file" CHANGELOG.md
+  sed -i "s/{{ compatible_semver }}/$compatible_semver/" CHANGELOG.md
+  sed -i "s/{{ previous_version }}/$previous_version_message/" CHANGELOG.md
 
   echo "[RELEASE]: Breaking changes message generated!"
 }
