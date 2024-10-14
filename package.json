@@ -10,6 +10,7 @@
   },
   "main": "bindings/node",
   "types": "bindings/node",
+  "packageManager": "npm@10.9.0",
   "keywords": [
     "incremental",
     "parsing",
