@@ -1,7 +1,7 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
   "changelog": [
-    "./with-updated-github-info.cjs",
+    "@svitejs/changesets-changelog-github-compact",
     { "repo": "Hdoc1509/tree-sitter-hygen-template" }
   ],
   "commit": false,
