@@ -12,6 +12,16 @@
 
 It extends the [`tree-sitter-embedded-template`][embedded-template] grammar.
 
+## Parser requirements
+
+- [`embedded-template`](https://github.com/tree-sitter/tree-sitter-embedded-template):
+  highlight of [`ejs` tags](https://github.com/mde/ejs?tab=readme-ov-file#tags)
+- [`bash`](https://github.com/tree-sitter/tree-sitter-bash) (optional):
+  highlight of `metadata.key` when `metadata.value` is `sh`
+- [`javascript`](https://github.com/tree-sitter/tree-sitter-javascript)
+  (optional): highlight of `code` nodes
+- Any other parser that you want to use for [dynamic injection](#dynamic-injections)
+
 ## Usage in Editors
 
 ### Neovim
@@ -34,6 +44,7 @@ implement this grammar:
 ```
 <file-name>.(ext).hygen
 ```
+
 ### Tree-sitter predicate/directive
 
 To implement dynamic injection, is recommended to create a predicate/directive
