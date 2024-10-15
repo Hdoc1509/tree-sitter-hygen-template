@@ -25,9 +25,19 @@ Thanks to [`content`][embedded-template-content-node] node of
 [`tree-sitter-embedded-template`][embedded-template] grammar, dynamic Injections
 can be attached to template body.
 
-**Check out the following implementations:**
+### File name pattern convention
 
-### hygen.nvim
+To make it easier to understand which `parser` will be injected and which
+filetype is used in template `body`, the following pattern is recommended to
+implement this grammar:
+
+```
+<file-name>.(ext).hygen
+```
+
+### Implementations
+
+#### hygen.nvim
 
 - [Dynamic injection query][hygen-nvim-injection-query]
 - [Dynamic injection directive][hygen-nvim-injection-directive]
