@@ -20,15 +20,17 @@ set_changelog_breaking_changes_message() {
   local version_npm
   local version_cargo
   local version_pypi
+  local major_minor_v
 
   if [[ $compatible_semver == "patch" ]]; then
     version_cargo="~$previous_version"
     version_npm="~$previous_version"
-    version_pypi="~$previous_version"
+    version_pypi="~=$previous_version"
   elif [[ $compatible_semver == "minor" ]]; then
+    major_minor_v=$(cut --delimiter=. --fields=1,2 <<<"$previous_version")
     version_cargo="$previous_version"
     version_npm="^$previous_version"
-    version_pypi="~=${previous_version%.*}"
+    version_pypi="~=$major_minor_v"
   else
     echo "Invalid compatible semver: $compatible_semver"
     exit 1
