@@ -17,12 +17,18 @@ set_changelog_initial_release_message() {
 set_changelog_breaking_changes_message() {
   local compatible_semver=$1
   local previous_version=$2
-  local previous_version_message
+  local previous_version_npm
+  local previous_version_cargo
+  local previous_version_pypi
 
   if [[ $compatible_semver == "patch" ]]; then
-    previous_version_message="~$previous_version"
+    previous_version_cargo="~$previous_version"
+    previous_version_npm="~$previous_version"
+    previous_version_pypi="~$previous_version"
   elif [[ $compatible_semver == "minor" ]]; then
-    previous_version_message="^$previous_version or ~$previous_version"
+    previous_version_cargo="$previous_version"
+    previous_version_npm="^$previous_version"
+    previous_version_pypi="~=${previous_version%.*}"
   else
     echo "Invalid compatible semver: $compatible_semver"
     exit 1
@@ -34,7 +40,9 @@ set_changelog_breaking_changes_message() {
 
   sed -i "4r $breaking_changes_message_file" CHANGELOG.md
   sed -i "s/{{ compatible_semver }}/$compatible_semver/" CHANGELOG.md
-  sed -i "s/{{ previous_version }}/$previous_version_message/" CHANGELOG.md
+  sed -i "s/{{ previous_version_npm }}/$previous_version_npm/" CHANGELOG.md
+  sed -i "s/{{ previous_version_cargo }}/$previous_version_cargo/" CHANGELOG.md
+  sed -i "s/{{ previous_version_pypi }}/$previous_version_pypi/" CHANGELOG.md
 
   echo "[RELEASE]: Breaking changes message generated!"
 }
