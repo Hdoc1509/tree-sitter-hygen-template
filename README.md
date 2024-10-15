@@ -46,4 +46,4 @@ can be attached to template body.
 [embedded-template]: https://github.com/tree-sitter/tree-sitter-embedded-template
 [embedded-template-content-node]: https://github.com/tree-sitter/tree-sitter-embedded-template/blob/62b0a6e45900a7dff7c37da95fec20a09968ba52/grammar.js#L26
 [hygen-nvim-injection-query]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/queries/hygen_template/injections.scm#L13-L15
-[hygen-nvim-injection-directive]: https://github.com/Hdoc1509/hygen.nvim/blob/master/lua/hygen/tree-sitter.lua#L32-L47
+[hygen-nvim-injection-directive]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/lua/hygen/tree-sitter.lua#L32-L47
