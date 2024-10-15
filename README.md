@@ -17,7 +17,7 @@ It extends the [`tree-sitter-embedded-template`][embedded-template] grammar.
 - [`embedded-template`](https://github.com/tree-sitter/tree-sitter-embedded-template):
   highlight of [`ejs` tags](https://github.com/mde/ejs?tab=readme-ov-file#tags)
 - [`bash`](https://github.com/tree-sitter/tree-sitter-bash) (optional):
-  highlight of `metadata.key` when `metadata.value` is `sh`
+  highlight of `metadata.value` when `metadata.key` is `sh`
 - [`javascript`](https://github.com/tree-sitter/tree-sitter-javascript)
   (optional): highlight of `code` nodes
 - Any other parser that you want to use for [dynamic injection](#dynamic-injection)
