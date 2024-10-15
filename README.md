@@ -50,6 +50,8 @@ with the following name:
 
 #### hygen.nvim
 
+- [Filetype detection][hygen-nvim-filetype]
+- [Parser register][hygen-nvim-parser-register]
 - [Dynamic injection query][hygen-nvim-injection-query]
 - [Dynamic injection directive][hygen-nvim-injection-directive]
 
@@ -66,5 +68,7 @@ with the following name:
 [pypi]: https://img.shields.io/pypi/v/tree-sitter-hygen-template?logo=pypi&logoColor=ffd242
 [embedded-template]: https://github.com/tree-sitter/tree-sitter-embedded-template
 [embedded-template-content-node]: https://github.com/tree-sitter/tree-sitter-embedded-template/blob/62b0a6e45900a7dff7c37da95fec20a09968ba52/grammar.js#L26
+[hygen-nvim-filetype]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/ftdetect/hygen.vim
+[hygen-nvim-parser-register]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/lua/hygen/tree-sitter.lua#L19-L29
 [hygen-nvim-injection-query]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/queries/hygen_template/injections.scm#L13-L15
 [hygen-nvim-injection-directive]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/lua/hygen/tree-sitter.lua#L32-L47
