@@ -29,6 +29,32 @@ It extends the [`tree-sitter-embedded-template`][embedded-template] grammar.
 - [`hygen.nvim`](https://github.com/Hdoc1509/hygen.nvim): plugin that integrates
   this grammar to your `Neovim` configuration.
 
+### Helix
+
+_To be added_
+
+<!--
+TODO: add script to add this grammar to Helix configuration. see:
+- https://docs.helix-editor.com/guides/adding_languages.html
+- https://docs.helix-editor.com/languages.html
+take reference from:
+https://github.com/IndianBoy42/tree-sitter-just?tab=readme-ov-file#manual-installation-helix
+-->
+
+### Emacs
+
+_To be added_
+
+<!--
+TODO: take reference from:
+https://github.com/tree-sitter-perl/tree-sitter-perl?tab=readme-ov-file#emacs
+-->
+
+### In General
+
+You can get the built files from the [`release`][release-branch] branch. If you
+have specific instructions for your editor, PR's are welcome.
+
 ## Dynamic Injection
 
 Thanks to [`content`][embedded-template-content-node] node of
@@ -83,3 +109,4 @@ with the following name:
 [hygen-nvim-parser-register]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/lua/hygen/tree-sitter.lua#L19-L29
 [hygen-nvim-injection-query]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/queries/hygen_template/injections.scm#L13-L15
 [hygen-nvim-injection-directive]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/lua/hygen/tree-sitter.lua#L32-L47
+[release-branch]: https://github.com/Hdoc1509/tree-sitter-hygen-template/tree/release
