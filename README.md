@@ -20,7 +20,7 @@ It extends the [`tree-sitter-embedded-template`][embedded-template] grammar.
   highlight of `metadata.key` when `metadata.value` is `sh`
 - [`javascript`](https://github.com/tree-sitter/tree-sitter-javascript)
   (optional): highlight of `code` nodes
-- Any other parser that you want to use for [dynamic injection](#dynamic-injections)
+- Any other parser that you want to use for [dynamic injection](#dynamic-injection)
 
 ## Usage in Editors
 
@@ -29,7 +29,7 @@ It extends the [`tree-sitter-embedded-template`][embedded-template] grammar.
 - [`hygen.nvim`](https://github.com/Hdoc1509/hygen.nvim): plugin that integrates
   this grammar to your `Neovim` configuration.
 
-## Dynamic Injections
+## Dynamic Injection
 
 Thanks to [`content`][embedded-template-content-node] node of
 [`tree-sitter-embedded-template`][embedded-template] grammar, dynamic Injections
