@@ -52,14 +52,14 @@ https://github.com/tree-sitter-perl/tree-sitter-perl?tab=readme-ov-file#emacs
 
 ### In General
 
-You can get the built files from the [`release`][release-branch] branch. If you
+You can get the built files from the [`release` branch][release-branch]. If you
 have specific instructions for your editor, PR's are welcome.
 
 ## Dynamic Injection
 
-Thanks to [`content`][embedded-template-content-node] node of
-[`tree-sitter-embedded-template`][embedded-template] grammar, dynamic Injections
-can be attached to template body.
+Thanks to `content` node of [`tree-sitter-embedded-template`
+grammar][embedded-template-grammar], dynamic injections can be attached to
+template body.
 
 ### File name pattern convention
 
@@ -88,9 +88,8 @@ with the following name:
 #### hygen.nvim
 
 - [Filetype detection][hygen-nvim-filetype]
-- [Parser register][hygen-nvim-parser-register]
-- [Dynamic injection query][hygen-nvim-injection-query]
-- [Dynamic injection directive][hygen-nvim-injection-directive]
+- [Parser register and injection directive][hygen-nvim-tree-sitter]
+- [Dynamic injection query][hygen-nvim-injection-queries]
 
 ## References
 
@@ -104,9 +103,8 @@ with the following name:
 [npm]: https://img.shields.io/npm/v/tree-sitter-hygen-template?logo=npm
 [pypi]: https://img.shields.io/pypi/v/tree-sitter-hygen-template?logo=pypi&logoColor=ffd242
 [embedded-template]: https://github.com/tree-sitter/tree-sitter-embedded-template
-[embedded-template-content-node]: https://github.com/tree-sitter/tree-sitter-embedded-template/blob/62b0a6e45900a7dff7c37da95fec20a09968ba52/grammar.js#L26
-[hygen-nvim-filetype]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/ftdetect/hygen.vim
-[hygen-nvim-parser-register]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/lua/hygen/tree-sitter.lua#L19-L29
-[hygen-nvim-injection-query]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/queries/hygen_template/injections.scm#L13-L15
-[hygen-nvim-injection-directive]: https://github.com/Hdoc1509/hygen.nvim/blob/9d6591f4f7955e28d10a64c8fd2f78294d267585/lua/hygen/tree-sitter.lua#L32-L47
+[embedded-template-grammar]: https://github.com/tree-sitter/tree-sitter-embedded-template/blob/master/grammar.js
+[hygen-nvim-filetype]: https://github.com/Hdoc1509/hygen.nvim/blob/master/ftdetect/hygen.vim
+[hygen-nvim-injection-queries]: https://github.com/Hdoc1509/hygen.nvim/blob/master/queries/hygen_template/injections.scm
+[hygen-nvim-tree-sitter]: https://github.com/Hdoc1509/hygen.nvim/blob/master/lua/hygen/tree-sitter.lua
 [release-branch]: https://github.com/Hdoc1509/tree-sitter-hygen-template/tree/release
