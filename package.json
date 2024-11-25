@@ -39,7 +39,7 @@
     "prebuildify": "6.0.1",
     "prettier": "3.3.3",
     "tree-sitter": "0.21.1",
-    "tree-sitter-cli": "0.24.1",
+    "tree-sitter-cli": "0.24.4",
     "wireit": "0.14.9"
   },
   "peerDependencies": {
