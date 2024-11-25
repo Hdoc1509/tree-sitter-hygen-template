@@ -33,7 +33,11 @@ echo "[RELEASE]: Unstable version release!"
 echo
 
 # genrate changelog and update version
-npx changeset version
+if ! npx changeset version ; then
+  echo
+  echo "[RELEASE]: Error while generating changelog!"
+  exit 1
+fi
 
 update_new_version
 
