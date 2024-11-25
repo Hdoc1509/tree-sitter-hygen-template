@@ -9,7 +9,7 @@ if ! [[ -f CHANGELOG.md ]]; then
   echo "[RELEASE]: Breaking changes check will be skipped!"
   echo
 
-  npx changeset version
+  generate_changelog
 
   # changelog is now generated
   update_new_version
@@ -32,12 +32,7 @@ breaking_changes_count=$(
 echo "[RELEASE]: Unstable version release!"
 echo
 
-# genrate changelog and update version
-if ! npx changeset version ; then
-  echo
-  echo "[RELEASE]: Error while generating changelog!"
-  exit 1
-fi
+generate_changelog
 
 update_new_version
 

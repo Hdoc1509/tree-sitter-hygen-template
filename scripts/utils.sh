@@ -10,6 +10,13 @@ pyproject_toml_version_line=8
 makefile=$REPO_ROOT/Makefile
 makefile_version_line=7
 
+generate_changelog() {
+  if ! npx changeset version; then
+    echo
+    echo "[RELEASE]: Error while generating changelog!"
+    exit 1
+  fi
+}
 get_version_from_changelog() {
   head --lines=3 "$changelog_file" | tail --lines=1 | awk '{ print $2 }'
 }

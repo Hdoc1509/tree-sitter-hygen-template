@@ -5,12 +5,7 @@ source "$REPO_ROOT"/scripts/utils.sh
 
 previous_version=$(get_version_from_changelog)
 
-# genrate changelog and update version
-if ! npx changeset version ; then
-  echo
-  echo "[RELEASE]: Error while generating changelog!"
-  exit 1
-fi
+generate_changelog
 
 update_new_version
 major_change_count=$(head --line=5 CHANGELOG.md | grep --count "Major")
