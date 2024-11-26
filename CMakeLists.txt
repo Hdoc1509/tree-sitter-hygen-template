@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-hygen-template
-        VERSION "0.0.1"
+        VERSION "0.2.3"
         DESCRIPTION "HygenTemplate grammar for tree-sitter"
         HOMEPAGE_URL "https://github.com/tree-sitter/tree-sitter-hygen-template"
         LANGUAGES C)
