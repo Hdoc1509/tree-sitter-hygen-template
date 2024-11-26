@@ -18,9 +18,6 @@ generate_changelog() {
     echo "[RELEASE]: Error while generating changelog!"
     exit 1
   fi
-
-  echo "[RELEASE]: If all changes are correct, update lock file by running:"
-  echo "npm install"
 }
 get_version_from_changelog() {
   head --lines=3 "$changelog_file" | tail --lines=1 | awk '{ print $2 }'
@@ -80,4 +77,7 @@ update_package_files_version() {
   sed -i "$c_make_lists_version_line s/$version_regex/$new_version/" "$c_make_lists_file"
 
   echo "[RELEASE]: Package files version updated!"
+  echo
+  echo "[RELEASE]: If all changes are correct, update lock file by running:"
+  echo "$ > npm install"
 }
