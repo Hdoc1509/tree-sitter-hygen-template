@@ -1,13 +1,22 @@
 //! This crate provides HygenTemplate language support for the [tree-sitter][] parsing library.
 //!
-//! Typically, you will use the [LANGUAGE][] constant to add this language to a
+//! Typically, you will use the [language][language func] function to add this language to a
 //! tree-sitter [Parser][], and then use the parser to parse some code:
 //!
 //! ```
 //! let code = r#"
+//! ---
+//! to: apps/<%= name %>/src/index.ts
+//! ---
+//!
+//! import { <%= name %> } from './app-generator';
+//!
+//! const app = new <%= name %>();
+//!
+//! app.run();
 //! "#;
 //! let mut parser = tree_sitter::Parser::new();
-//! let language = tree_sitter_hygen-template::LANGUAGE;
+//! let language = tree_sitter_hygen_template::LANGUAGE;
 //! parser
 //!     .set_language(&language.into())
 //!     .expect("Error loading HygenTemplate parser");
@@ -21,13 +30,13 @@
 use tree_sitter_language::LanguageFn;
 
 extern "C" {
-    fn tree_sitter_hygen-template() -> *const ();
+    fn tree_sitter_hygen_template() -> *const ();
 }
 
 /// The tree-sitter [`LanguageFn`][LanguageFn] for this grammar.
 ///
 /// [LanguageFn]: https://docs.rs/tree-sitter-language/*/tree_sitter_language/struct.LanguageFn.html
-pub const LANGUAGE: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_hygen-template) };
+pub const LANGUAGE: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_hygen_template) };
 
 /// The content of the [`node-types.json`][] file for this grammar.
 ///
@@ -36,8 +45,8 @@ pub const NODE_TYPES: &str = include_str!("../../src/node-types.json");
 
 // NOTE: uncomment these to include any queries that this grammar contains:
 
-// pub const HIGHLIGHTS_QUERY: &str = include_str!("../../queries/highlights.scm");
-// pub const INJECTIONS_QUERY: &str = include_str!("../../queries/injections.scm");
+pub const HIGHLIGHTS_QUERY: &str = include_str!("../../queries/highlights.scm");
+pub const INJECTIONS_QUERY: &str = include_str!("../../queries/injections.scm");
 // pub const LOCALS_QUERY: &str = include_str!("../../queries/locals.scm");
 // pub const TAGS_QUERY: &str = include_str!("../../queries/tags.scm");
 
