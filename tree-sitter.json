@@ -13,7 +13,7 @@
     }
   ],
   "metadata": {
-    "version": "0.2.3",
+    "version": "0.3.0",
     "license": "MIT",
     "description": "Hygen Template grammar for tree-sitter",
     "authors": [

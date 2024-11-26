@@ -1,5 +1,15 @@
 # tree-sitter-hygen-template
 
+## 0.3.0
+
+### Minor Changes
+
+- Include `tree-sitter.json` file ([`198a3d4`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/198a3d461a91f040316abbbbc422bd690e118d5e))
+
+### Patch Changes
+
+- Set correct package name in `peerDependenciesMeta` ([`06fd17f`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/06fd17f5b996900fb5048887d20a870dab37d06d))
+
 ## 0.2.3
 
 ### Patch Changes

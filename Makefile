@@ -4,7 +4,7 @@ endif
 
 LANGUAGE_NAME := tree-sitter-hygen-template
 HOMEPAGE_URL := https://github.com/hdoc1509/tree-sitter-hygen-template
-VERSION := 0.2.3
+VERSION := 0.3.0
 
 # repository
 SRC_DIR := src
