@@ -9,6 +9,8 @@ pyproject_toml_file=$REPO_ROOT/pyproject.toml
 pyproject_toml_version_line=8
 makefile=$REPO_ROOT/Makefile
 makefile_version_line=7
+c_make_lists_file=$REPO_ROOT/CMakeLists.txt
+c_make_lists_version_line=4
 
 generate_changelog() {
   if ! npx changeset version; then
@@ -75,6 +77,7 @@ update_package_files_version() {
   sed -i "$pyproject_toml_version_line s/$version_regex/$new_version/" "$pyproject_toml_file"
   sed -i "$tree_sitter_json_version_line s/$version_regex/$new_version/" "$tree_sitter_json_file"
   sed -i "$makefile_version_line s/$version_regex/$new_version/" "$makefile"
+  sed -i "$c_make_lists_version_line s/$version_regex/$new_version/" "$c_make_lists_file"
 
   echo "[RELEASE]: Package files version updated!"
 }
