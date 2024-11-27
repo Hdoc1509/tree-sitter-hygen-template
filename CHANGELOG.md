@@ -1,5 +1,11 @@
 # tree-sitter-hygen-template
 
+## 0.3.1
+
+### Patch Changes
+
+- Revert some changes made to node bindings ([`72e4093`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/72e409362e94a31d9ed92a4e2008b5b5eb8d98a8))
+
 ## 0.3.0
 
 ### Minor Changes
