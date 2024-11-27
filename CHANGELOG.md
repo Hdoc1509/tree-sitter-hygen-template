@@ -1,5 +1,11 @@
 # tree-sitter-hygen-template
 
+## 0.3.2
+
+### Patch Changes
+
+- Disable recursive inclusion of `grammar.js` files in Cargo.toml ([`33fd935`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/33fd93546035de8eb45ad4fd85113503b64b336c))
+
 ## 0.3.1
 
 ### Patch Changes

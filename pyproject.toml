@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "tree-sitter-hygen-template"
 description = "Hygen Template grammar for tree-sitter"
-version = "0.3.1"
+version = "0.3.2"
 keywords = ["incremental", "parsing", "tree-sitter", "hygen-template"]
 classifiers = [
   "Intended Audience :: Developers",
