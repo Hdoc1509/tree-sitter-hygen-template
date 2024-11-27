@@ -79,5 +79,5 @@ update_package_files_version() {
   echo "[RELEASE]: Package files version updated!"
   echo
   echo "[RELEASE]: If all changes are correct, update lock file by running:"
-  echo "$ > npm install"
+  echo "> npm install"
 }
