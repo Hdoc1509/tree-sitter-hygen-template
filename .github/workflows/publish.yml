@@ -18,8 +18,6 @@ jobs:
   crates:
     if: github.repository == 'Hdoc1509/tree-sitter-hygen-template'
     uses: tree-sitter/workflows/.github/workflows/package-crates.yml@main
-    with:
-      rust-toolchain: 1.81.0
     secrets:
       CARGO_REGISTRY_TOKEN: ${{secrets.CARGO_REGISTRY_TOKEN}}
 
