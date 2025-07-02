@@ -67,7 +67,7 @@ To make it easier to understand which `parser` will be injected and which
 filetype is used in template `body`, the following pattern is recommended to
 implement this grammar:
 
-```
+```txt
 <file-name>.(ext).hygen
 ```
 
@@ -76,7 +76,7 @@ implement this grammar:
 To implement dynamic injection, is recommended to create a predicate/directive
 with the following name:
 
-```
+```txt
 #inject-hygen-tmpl!
 ```
 
