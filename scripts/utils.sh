@@ -2,15 +2,10 @@ changelog_file=$REPO_ROOT/CHANGELOG.md
 breaking_changes_message_file=$REPO_ROOT/scripts/breaking-change-message.md
 
 cargo_toml_file=$REPO_ROOT/Cargo.toml
-cargo_toml_version_line=4
 tree_sitter_json_file=$REPO_ROOT/tree-sitter.json
-tree_sitter_json_version_line=16
 pyproject_toml_file=$REPO_ROOT/pyproject.toml
-pyproject_toml_version_line=8
 makefile=$REPO_ROOT/Makefile
-makefile_version_line=7
 c_make_lists_file=$REPO_ROOT/CMakeLists.txt
-c_make_lists_version_line=4
 
 generate_changelog() {
   if ! npx changeset version; then
@@ -70,11 +65,11 @@ update_package_files_version() {
   echo
   echo "[RELEASE]: Updating package files version..."
 
-  sed -i "$cargo_toml_version_line s/$previous_version/$new_version/" "$cargo_toml_file"
-  sed -i "$pyproject_toml_version_line s/$previous_version/$new_version/" "$pyproject_toml_file"
-  sed -i "$tree_sitter_json_version_line s/$previous_version/$new_version/" "$tree_sitter_json_file"
-  sed -i "$makefile_version_line s/$previous_version/$new_version/" "$makefile"
-  sed -i "$c_make_lists_version_line s/$previous_version/$new_version/" "$c_make_lists_file"
+  sed -i "s/version = \"$previous_version/version = \"$new_version/" "$cargo_toml_file"
+  sed -i "s/version = \"$previous_version/version = \"$new_version/" "$pyproject_toml_file"
+  sed -i "s/version\": \"$previous_version/version\": \"$new_version/" "$tree_sitter_json_file"
+  sed -i "s/VERSION := $previous_version/VERSION := $new_version/" "$makefile"
+  sed -i "s/VERSION \"$previous_version/VERSION \"$new_version/" "$c_make_lists_file"
 
   echo "[RELEASE]: Package files version updated!"
   echo
