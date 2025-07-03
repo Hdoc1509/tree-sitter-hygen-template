@@ -23,6 +23,7 @@ fi
 previous_version=$(get_version_from_changelog)
 
 # changes since last release
+# inject:regex:
 unstable_message_regex='^\w+(\(.*\))?:!'
 breaking_changes_count=$(
   git log "$(get_last_tag)"..HEAD --oneline |
