@@ -27,7 +27,7 @@
 
 (comment_directive) @comment
 
-([
+[
   "<%#"
   "<%"
   "<%="
