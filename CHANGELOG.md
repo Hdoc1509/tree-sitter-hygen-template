@@ -52,7 +52,7 @@
 
 ### Patch Changes
 
-- [ebc2643](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/ebc264354a93311ca59c857d70ba1e39eb10218b): Update publish releated files
+- [ebc2643](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/ebc264354a93311ca59c857d70ba1e39eb10218b): Update publish related files
 
 ## 0.1.0
 
