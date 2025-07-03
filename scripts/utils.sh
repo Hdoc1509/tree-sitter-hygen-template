@@ -64,17 +64,17 @@ get_last_tag() { git describe --tags --abbrev=0; }
 
 update_new_version() { new_version="$(get_version_from_changelog)"; }
 
-version_regex='[0-9]\+\.[0-9]\+\.[0-9]\+'
-
 update_package_files_version() {
+  local previous_version=$1
+
   echo
   echo "[RELEASE]: Updating package files version..."
 
-  sed -i "$cargo_toml_version_line s/$version_regex/$new_version/" "$cargo_toml_file"
-  sed -i "$pyproject_toml_version_line s/$version_regex/$new_version/" "$pyproject_toml_file"
-  sed -i "$tree_sitter_json_version_line s/$version_regex/$new_version/" "$tree_sitter_json_file"
-  sed -i "$makefile_version_line s/$version_regex/$new_version/" "$makefile"
-  sed -i "$c_make_lists_version_line s/$version_regex/$new_version/" "$c_make_lists_file"
+  sed -i "$cargo_toml_version_line s/$previous_version/$new_version/" "$cargo_toml_file"
+  sed -i "$pyproject_toml_version_line s/$previous_version/$new_version/" "$pyproject_toml_file"
+  sed -i "$tree_sitter_json_version_line s/$previous_version/$new_version/" "$tree_sitter_json_file"
+  sed -i "$makefile_version_line s/$previous_version/$new_version/" "$makefile"
+  sed -i "$c_make_lists_version_line s/$previous_version/$new_version/" "$c_make_lists_file"
 
   echo "[RELEASE]: Package files version updated!"
   echo

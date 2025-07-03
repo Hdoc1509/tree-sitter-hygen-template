@@ -17,4 +17,4 @@ if [[ $major_change_count -gt 0 ]]; then
   set_changelog_breaking_changes_message "minor" "$previous_version"
 fi
 
-update_package_files_version
+update_package_files_version "$previous_version"
