@@ -1,5 +1,11 @@
 # tree-sitter-hygen-template
 
+## 0.4.2
+
+### Patch Changes
+
+- Simplify file naming convention ([`a871af1`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/a871af11e50777823e442b552d760e3c92f9dd91))
+
 ## 0.4.1
 
 ### Patch Changes
