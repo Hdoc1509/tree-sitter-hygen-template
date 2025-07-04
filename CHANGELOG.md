@@ -1,5 +1,11 @@
 # tree-sitter-hygen-template
 
+## 0.4.1
+
+### Patch Changes
+
+- Disable recursive inclution of LICENSE files in Cargo.toml ([`22ce390`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/22ce390eee85ad33af2cb21a8cab2ffae7adb522))
+
 ## 0.4.0
 
 ### Minor Changes
