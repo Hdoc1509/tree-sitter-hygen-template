@@ -1,5 +1,11 @@
 # tree-sitter-hygen-template
 
+## 0.4.0
+
+### Minor Changes
+
+- Include LICENSE file for cargo project ([`82894fa`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/82894fa568656650aff429b6c8d2e01d74861902))
+
 ## 0.3.4
 
 ### Patch Changes
