@@ -1,5 +1,11 @@
 # tree-sitter-hygen-template
 
+## 0.3.4
+
+### Patch Changes
+
+- Update `node` lockfile ([`7196ddb`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/7196ddb0d11f36eca183df09a5bd192d585af12f))
+
 ## 0.3.3
 
 ### Patch Changes
