@@ -1,5 +1,11 @@
 # tree-sitter-hygen-template
 
+## 0.3.3
+
+### Patch Changes
+
+- Remove inheritance on `embedded_template` in `highlights` query ([`9a7b792`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/9a7b7924f64246f5cfcff9d9657fa299ce2a8371))
+
 ## 0.3.2
 
 ### Patch Changes
