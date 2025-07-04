@@ -83,9 +83,9 @@ following name:
 > [!NOTE]
 > The creation of this directive varies for each editor
 
-### Implementations
+## Implementations
 
-#### hygen.nvim
+### hygen.nvim
 
 - [Filetype detection][hygen-nvim-filetype]
 - [Parser register and injection directive][hygen-nvim-tree-sitter]
