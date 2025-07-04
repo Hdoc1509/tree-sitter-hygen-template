@@ -61,15 +61,17 @@ Thanks to `content` node of [`tree-sitter-embedded-template`
 grammar][embedded-template-grammar], dynamic injections can be attached to
 template body.
 
-### File name pattern convention
+### File naming convention
 
-To make it easier to understand which `parser` will be injected and which
-filetype is used in template `body`, the following pattern is recommended to
-implement this grammar:
+Just add `.hygen` to the end of the file name, i.e.:
 
-```txt
-<file-name>.(ext).hygen
-```
+- `index.html.hygen`
+- `.gitignore.hygen`
+- `.tsconfig.json.hygen`
+
+Each [implementation](#implementations) just need to remove `.hygen` from the
+file name and use the rest of the file name to retrieve the `parser` to be
+used for dynamic injection.
 
 ### Tree-sitter directive
 
