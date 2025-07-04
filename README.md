@@ -71,17 +71,17 @@ implement this grammar:
 <file-name>.(ext).hygen
 ```
 
-### Tree-sitter predicate/directive
+### Tree-sitter directive
 
-To implement dynamic injection, is recommended to create a predicate/directive
-with the following name:
+To implement dynamic injection, is recommended to create a directive with the
+following name:
 
 ```txt
 #inject-hygen-tmpl!
 ```
 
 > [!NOTE]
-> The creation of this predicate/directive varies for each editor
+> The creation of this directive varies for each editor
 
 ### Implementations
 
