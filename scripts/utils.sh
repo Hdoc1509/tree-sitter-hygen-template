@@ -74,9 +74,11 @@ update_package_files_version() {
   echo "[RELEASE]: Package files version updated!"
   echo
   echo "[RELEASE]: If all changes are correct, update lock file by running:"
+  # inject:bash:
   echo "> npm install"
   echo
   echo "[RELEASE]: Don't forget to commit the changes!"
   echo "[RELEASE]: Don't forget to generate git tags:"
+  # inject:bash:
   echo "> npx changeset tag"
 }
