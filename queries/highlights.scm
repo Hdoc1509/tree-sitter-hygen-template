@@ -28,3 +28,11 @@
   "-%>"
   "_%>"
 ] @keyword
+
+(frontmatter
+  (metadata
+    (value
+      [
+        (true)
+        (false)
+      ] @boolean)))
