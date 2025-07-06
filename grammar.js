@@ -31,7 +31,19 @@ module.exports = grammar(embedded_template, {
       seq(field("key", $.key), ":", field("value", $.value), /\n/),
     key: () => /\w+/,
     value: ($) =>
-      seq(repeat1(choice($.directive, $.output_directive, $.string_value))),
+      seq(
+        repeat1(
+          choice(
+            $.directive,
+            $.output_directive,
+            $.string_value,
+            $.true,
+            $.false,
+          ),
+        ),
+      ),
+    true: () => /\s*?true/,
+    false: () => /\s*?false/,
     string_value: () => /[^<\n]+/,
 
     body: ($) =>
