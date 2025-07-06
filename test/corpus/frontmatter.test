@@ -60,3 +60,28 @@ to: app/emails/<%= name %>.html
         (output_directive
           (code))
         (string_value)))))
+
+=====================================||
+Frontmatter with strings and booleans
+=====================================||
+---
+to: app/emails/example.html
+unless_exists: true
+unless_exists: false
+---
+---||
+
+(template
+  (frontmatter
+    (metadata
+      (key)
+      (value
+        (string_value)))
+    (metadata
+      (key)
+      (value
+        (true)))
+    (metadata
+      (key)
+      (value
+        (false)))))
