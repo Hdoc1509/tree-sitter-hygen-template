@@ -8,7 +8,7 @@
 [![pypi][pypi]](https://pypi.org/project/tree-sitter-hygen-template)
 
 [Tree-sitter](https://github.com/tree-sitter/tree-sitter) grammar for
-[Hygen](https://www.hygen.io/) templates.
+[Hygen](https://github.com/jondot/hygen) templates.
 
 It extends the [`tree-sitter-embedded-template`][embedded-template] grammar.
 
@@ -111,7 +111,7 @@ the editor:
 ## References
 
 - [Hygen repository](https://github.com/jondot/hygen)
-- [Hygen website](https://www.hygen.io/)
+- [Hygen website](https://www.hygen.io/) (_currently down_)
 
 [ci]: https://github.com/Hdoc1509/tree-sitter-hygen-template/actions/workflows/ci.yml/badge.svg
 [discord]: https://img.shields.io/discord/1063097320771698699?logo=discord&label=discord
