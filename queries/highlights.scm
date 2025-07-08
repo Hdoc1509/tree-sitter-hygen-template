@@ -36,3 +36,8 @@
         (true)
         (false)
       ] @boolean)))
+
+(frontmatter
+  (metadata
+    (value
+      (number) @number)))
