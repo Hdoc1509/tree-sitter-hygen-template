@@ -85,3 +85,27 @@ unless_exists: false
       (key)
       (value
         (false)))))
+
+================================||
+With string, booleans and number
+================================||
+---
+to: app/emails/example.html
+unless_exists: true
+at_line: 1
+---
+---||
+
+(template
+  (frontmatter
+    (metadata
+      (key)
+      (value
+        (string_value)))
+    (metadata
+      (key)
+      (value
+        (true)))
+    (metadata
+      (key)
+      (value (number)))))
