@@ -164,6 +164,10 @@
           "named": true
         },
         {
+          "type": "number",
+          "named": true
+        },
+        {
           "type": "output_directive",
           "named": true
         },
@@ -252,6 +256,10 @@
   },
   {
     "type": "key",
+    "named": true
+  },
+  {
+    "type": "number",
     "named": true
   },
   {

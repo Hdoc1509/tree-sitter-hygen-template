@@ -337,6 +337,10 @@
               {
                 "type": "SYMBOL",
                 "name": "false"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "number"
               }
             ]
           }
@@ -350,6 +354,10 @@
     "false": {
       "type": "PATTERN",
       "value": "\\s*?false"
+    },
+    "number": {
+      "type": "PATTERN",
+      "value": "\\s*?\\d+"
     },
     "string_value": {
       "type": "PATTERN",

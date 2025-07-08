@@ -39,11 +39,13 @@ module.exports = grammar(embedded_template, {
             $.string_value,
             $.true,
             $.false,
+            $.number,
           ),
         ),
       ),
     true: () => /\s*?true/,
     false: () => /\s*?false/,
+    number: () => /\s*?\d+/,
     string_value: () => /[^<\n]+/,
 
     body: ($) =>
