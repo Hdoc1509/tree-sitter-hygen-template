@@ -18,6 +18,9 @@ It extends the [`tree-sitter-embedded-template`][embedded-template] grammar.
   highlight of `metadata.value` when `metadata.key` is `sh`
 - [`javascript`](https://github.com/tree-sitter/tree-sitter-javascript)
   (optional): highlight of `code` nodes
+- [`regex`](https://github.com/tree-sitter/tree-sitter-regex) (optional):
+  highlight of `metadata.value` when `metadata.key` is `after`, `before` or
+  `skip_if`
 - Any other parser that you want to use for [dynamic injection](#dynamic-injection)
 
 ## Usage in Editors
