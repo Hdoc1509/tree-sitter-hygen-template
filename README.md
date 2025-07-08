@@ -70,10 +70,6 @@ Just add `.hygen` to the end of the file name, i.e.:
 - `.gitignore.hygen`
 - `.tsconfig.json.hygen`
 
-Each [implementation](#implementations) just need to remove `.hygen` from the
-file name and use the rest of the file name to retrieve the `parser` to be
-used for dynamic injection.
-
 ### Tree-sitter directive
 
 To implement dynamic injection, is recommended to create a directive with the
@@ -85,6 +81,24 @@ following name:
 
 > [!NOTE]
 > The creation of this directive varies for each editor
+
+This directive will the resonsible to remove `.hygen` from the file name and use
+the rest of the file name to retrieve the `parser` to be used for dynamic
+injection. See [implementations](#implementations) for more details.
+
+> [!WARNING]
+> Ignore dynamic injection for `*.ejs.hygen`, `*.erb.hygen` and `*.hygen.hygen`
+> files to avoid weird behaviours
+
+Once created, add it to the end of `injections.scm` file that will be used by
+the editor:
+
+```query
+; dynamic injection
+((content) @injection.content
+  (#inject-hygen-tmpl! "")
+  (#set! injection.combined))
+```
 
 ## Implementations
 
