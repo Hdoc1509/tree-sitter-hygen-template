@@ -14,8 +14,6 @@ It extends the [`tree-sitter-embedded-template`][embedded-template] grammar.
 
 ## Parser requirements
 
-- [`embedded-template`][embedded-template]: highlight of [`ejs`
-  tags](https://github.com/mde/ejs?tab=readme-ov-file#tags)
 - [`bash`](https://github.com/tree-sitter/tree-sitter-bash) (optional):
   highlight of `metadata.value` when `metadata.key` is `sh`
 - [`javascript`](https://github.com/tree-sitter/tree-sitter-javascript)
