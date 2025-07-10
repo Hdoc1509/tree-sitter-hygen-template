@@ -1,6 +1,8 @@
 changelog_file=$REPO_ROOT/CHANGELOG.md
 breaking_changes_message_file=$REPO_ROOT/scripts/breaking-change-message.md
 
+# TODO: use same release flow as hygen.nvim
+
 cargo_toml_file=$REPO_ROOT/Cargo.toml
 tree_sitter_json_file=$REPO_ROOT/tree-sitter.json
 pyproject_toml_file=$REPO_ROOT/pyproject.toml

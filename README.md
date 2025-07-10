@@ -82,8 +82,8 @@ following name:
 > [!NOTE]
 > The creation of this directive varies for each editor
 
-This directive will the resonsible to remove `.hygen` from the file name and use
-the rest of the file name to retrieve the `parser` to be used for dynamic
+This directive will the responsible to remove `.hygen` from the file name and
+use the rest of the file name to retrieve the `parser` to be used for dynamic
 injection. See [implementations](#implementations) for more details.
 
 > [!WARNING]
