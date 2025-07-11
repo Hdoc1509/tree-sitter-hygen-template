@@ -24,7 +24,7 @@ release_major_0() {
   # breaking_changes_count=1
 
   if [[ $breaking_changes_count -gt 0 ]]; then
-    add_breaking_changes_message "patch" "$previous_version"
+    add_breaking_changes_message "patch" "$previous_version" "$changelog_file"
   fi
 
   update_package_files_version "$previous_version" "$new_version"

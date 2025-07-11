@@ -31,6 +31,7 @@ set_changelog_initial_release_message() {
 add_breaking_changes_message() {
   local compatible_semver=$1
   local previous_version=$2
+  local changelog_file=$3
   local version_npm
   local version_cargo
   local version_pypi
@@ -54,11 +55,11 @@ add_breaking_changes_message() {
   echo "[RELEASE]: Breaking changes detected!"
   echo "[RELEASE]: Generating breaking change message..."
 
-  sed -i "4r $breaking_changes_message_file" CHANGELOG.md
-  sed -i "s/{{ compatible_semver }}/$compatible_semver/" CHANGELOG.md
-  sed -i "s/{{ version_npm }}/$version_npm/" CHANGELOG.md
-  sed -i "s/{{ version_cargo }}/$version_cargo/" CHANGELOG.md
-  sed -i "s/{{ version_pypi }}/$version_pypi/" CHANGELOG.md
+  sed -i "4r $breaking_changes_message_file" "$changelog_file"
+  sed -i "s/{{ compatible_semver }}/$compatible_semver/" "$changelog_file"
+  sed -i "s/{{ version_npm }}/$version_npm/" "$changelog_file"
+  sed -i "s/{{ version_cargo }}/$version_cargo/" "$changelog_file"
+  sed -i "s/{{ version_pypi }}/$version_pypi/" "$changelog_file"
 
   echo "[RELEASE]: Breaking changes message generated!"
 }
