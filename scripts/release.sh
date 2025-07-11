@@ -5,7 +5,7 @@ source "$REPO_ROOT"/scripts/utils.sh
 
 previous_version=$(get_version_from_changelog)
 
-generate_changelog
+trigger_release
 
 update_new_version
 major_change_count=$(head --line=5 CHANGELOG.md | grep --count "Major")

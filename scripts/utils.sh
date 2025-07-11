@@ -9,7 +9,7 @@ pyproject_toml_file=$REPO_ROOT/pyproject.toml
 makefile=$REPO_ROOT/Makefile
 c_make_lists_file=$REPO_ROOT/CMakeLists.txt
 
-generate_changelog() {
+trigger_release() {
   if ! npx changeset version; then
     echo
     echo "[RELEASE]: Error while generating changelog!"

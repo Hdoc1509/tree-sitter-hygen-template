@@ -9,7 +9,7 @@ if ! [[ -f CHANGELOG.md ]]; then
   echo "[RELEASE]: Breaking changes check will be skipped!"
   echo
 
-  generate_changelog
+  trigger_release
 
   # changelog is now generated
   update_new_version
@@ -33,7 +33,7 @@ breaking_changes_count=$(
 echo "[RELEASE]: Unstable version release!"
 echo
 
-generate_changelog
+trigger_release
 
 update_new_version
 
