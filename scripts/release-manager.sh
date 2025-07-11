@@ -1,6 +1,5 @@
 REPO_ROOT=$(git rev-parse --show-toplevel)
 changelog_file=$REPO_ROOT/CHANGELOG.md
-export REPO_ROOT
 
 # TODO: check if changelog_file is available without passing it as argument
 
