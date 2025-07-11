@@ -1,4 +1,3 @@
-changelog_file=$REPO_ROOT/CHANGELOG.md
 breaking_changes_message_file=$REPO_ROOT/scripts/breaking-change-message.md
 
 cargo_toml_file=$REPO_ROOT/Cargo.toml
@@ -18,10 +17,6 @@ trigger_release() {
 get_current_version() {
   local changelog_file=$1
   sed --quiet '3p' "$changelog_file" | awk '{ print $2 }'
-}
-
-get_version_from_changelog() {
-  head --lines=3 "$changelog_file" | tail --lines=1 | awk '{ print $2 }'
 }
 
 add_breaking_changes_message() {
@@ -59,10 +54,6 @@ add_breaking_changes_message() {
 
   echo "[RELEASE]: Breaking changes message generated!"
 }
-
-get_last_tag() { git describe --tags --abbrev=0; }
-
-update_new_version() { new_version="$(get_version_from_changelog)"; }
 
 update_package_files_version() {
   local previous_version=$1
