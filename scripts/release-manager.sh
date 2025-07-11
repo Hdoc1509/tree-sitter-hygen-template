@@ -13,7 +13,7 @@ if ! [[ -f $changelog_file ]]; then
 
   trigger_release
 
-  set_changelog_initial_release_message
+  sed -i "5 s/.*/### Initial release/" "$changelog_file"
   update_package_files_version "0.0.0" "$(get_current_version "$changelog_file")"
 
   exit 0
