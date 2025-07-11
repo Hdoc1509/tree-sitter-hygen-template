@@ -62,9 +62,9 @@ get_last_tag() { git describe --tags --abbrev=0; }
 
 update_new_version() { new_version="$(get_version_from_changelog)"; }
 
-# TODO: receive new_version as second argument
 update_package_files_version() {
   local previous_version=$1
+  local new_version=$2
 
   echo
   echo "[RELEASE]: Updating package files version..."

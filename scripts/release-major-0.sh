@@ -5,7 +5,9 @@ _get_last_tag() { git describe --tags --abbrev=0; }
 
 release_major_0() {
   local previous_version=$1
+  local changelog_file=$2
   local breaking_changes_count
+  local new_version
 
   breaking_changes_count=$(
     git log "$(_get_last_tag)"..HEAD --oneline |
@@ -15,7 +17,8 @@ release_major_0() {
   echo -e "[RELEASE]: Major 0 release!\n"
 
   trigger_release
-  update_new_version
+
+  new_version=$(sed --quiet '3p' "$changelog_file" | awk '{ print $2 }')
 
   # NOTE: uncomment to test
   # breaking_changes_count=1
@@ -24,6 +27,6 @@ release_major_0() {
     set_changelog_breaking_changes_message "patch" "$previous_version"
   fi
 
-  update_package_files_version "$previous_version"
+  update_package_files_version "$previous_version" "$new_version"
   # reminder_message
 }
