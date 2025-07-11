@@ -19,6 +19,7 @@ trigger_release() {
 get_version_from_changelog() {
   head --lines=3 "$changelog_file" | tail --lines=1 | awk '{ print $2 }'
 }
+# TODO: rename to add_breaking_changes_message
 set_changelog_initial_release_message() {
   sed -i "5 s/.*/### Initial release/" "$changelog_file"
 }
@@ -61,6 +62,7 @@ get_last_tag() { git describe --tags --abbrev=0; }
 
 update_new_version() { new_version="$(get_version_from_changelog)"; }
 
+# TODO: receive new_version as second argument
 update_package_files_version() {
   local previous_version=$1
 
@@ -84,3 +86,5 @@ update_package_files_version() {
   # inject:bash:
   echo "> npx changeset tag"
 }
+
+# TODO: add reminder_message()
