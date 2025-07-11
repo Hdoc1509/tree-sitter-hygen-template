@@ -2,6 +2,8 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 changelog_file=$REPO_ROOT/CHANGELOG.md
 export REPO_ROOT
 
+# TODO: check if changelog_file is available without passing it as argument
+
 source "$REPO_ROOT"/scripts/utils.sh
 
 if ! [[ -f $changelog_file ]]; then
@@ -11,11 +13,8 @@ if ! [[ -f $changelog_file ]]; then
 
   trigger_release
 
-  # TODO: add util get_current_version()
-  new_version=$(sed --quiet '3p' "$changelog_file" | awk '{ print $2 }')
-
   set_changelog_initial_release_message
-  update_package_files_version "0.0.0" "$new_version"
+  update_package_files_version "0.0.0" "$(get_current_version "$changelog_file")"
 
   exit 0
 fi

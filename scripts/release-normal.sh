@@ -8,8 +8,7 @@ release_normal() {
 
   trigger_release
 
-  new_version=$(sed --quiet '3p' "$changelog_file" | awk '{ print $2 }')
-
+  new_version=$(get_current_version "$changelog_file")
   breaking_changes_count=$(
     sed --quiet '5p' "$changelog_file" | grep --count "Major"
   )

@@ -18,7 +18,7 @@ release_major_0() {
 
   trigger_release
 
-  new_version=$(sed --quiet '3p' "$changelog_file" | awk '{ print $2 }')
+  new_version=$(get_current_version "$changelog_file")
 
   # NOTE: uncomment to test
   # breaking_changes_count=1

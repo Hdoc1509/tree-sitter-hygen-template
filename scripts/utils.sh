@@ -16,6 +16,12 @@ trigger_release() {
     exit 1
   fi
 }
+
+get_current_version() {
+  local changelog_file=$1
+  sed --quiet '3p' "$changelog_file" | awk '{ print $2 }'
+}
+
 get_version_from_changelog() {
   head --lines=3 "$changelog_file" | tail --lines=1 | awk '{ print $2 }'
 }
