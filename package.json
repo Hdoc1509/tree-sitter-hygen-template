@@ -55,7 +55,7 @@
     "gen": "wireit",
     "hl": "tree-sitter highlight",
     "install": "node-gyp-build",
-    "parser:release": "bash ./scripts/release-unstable.sh",
+    "parser:release": "bash ./scripts/release-manager.sh",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js",
