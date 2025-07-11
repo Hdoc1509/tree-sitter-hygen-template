@@ -25,11 +25,10 @@ get_current_version() {
 get_version_from_changelog() {
   head --lines=3 "$changelog_file" | tail --lines=1 | awk '{ print $2 }'
 }
-# TODO: rename to add_breaking_changes_message
 set_changelog_initial_release_message() {
   sed -i "5 s/.*/### Initial release/" "$changelog_file"
 }
-set_changelog_breaking_changes_message() {
+add_breaking_changes_message() {
   local compatible_semver=$1
   local previous_version=$2
   local version_npm
