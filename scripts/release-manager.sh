@@ -1,13 +1,14 @@
 REPO_ROOT=$(git rev-parse --show-toplevel)
 CHANGELOG_FILE=$REPO_ROOT/CHANGELOG.md
 
+source "$REPO_ROOT"/scripts/logger.sh
 source "$REPO_ROOT"/scripts/utils.sh
 
 if ! [[ -f $CHANGELOG_FILE ]]; then
   PREVIOUS_VERSION="0.0.0"
 
-  echo "[RELEASE]: Initial release!"
-  echo "[RELEASE]: Breaking changes check will be skipped!"
+  info_log "Initial release!"
+  warn_log "Breaking changes check will be skipped!"
   echo
 
   trigger_release

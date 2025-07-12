@@ -1,7 +1,7 @@
 release_normal() {
   local breaking_changes_count
 
-  echo -e "[RELEASE]: Normal release!\n"
+  info_log "Normal release!\n"
 
   trigger_release
 
