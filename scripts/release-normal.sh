@@ -1,5 +1,4 @@
 release_normal() {
-  local previous_version=$1
   local breaking_changes_count
 
   echo -e "[RELEASE]: Normal release!\n"
@@ -14,9 +13,9 @@ release_normal() {
   # major_change_count=1
 
   if [[ $breaking_changes_count -gt 0 ]]; then
-    add_breaking_changes_message "minor" "$previous_version"
+    add_breaking_changes_message "minor"
   fi
 
-  update_package_files_version "$previous_version" "$(get_current_version)"
+  update_package_files_version "$(get_current_version)"
   # reminder_message
 }

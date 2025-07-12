@@ -18,20 +18,19 @@ get_current_version() { sed --quiet '3p' "$CHANGELOG_FILE" | awk '{ print $2 }';
 
 add_breaking_changes_message() {
   local compatible_semver=$1
-  local previous_version=$2
   local version_npm
   local version_cargo
   local version_pypi
   local major_minor_v
 
   if [[ $compatible_semver == "patch" ]]; then
-    version_cargo="~$previous_version"
-    version_npm="~$previous_version"
-    version_pypi="~=$previous_version"
+    version_cargo="~$PREVIOUS_VERSION"
+    version_npm="~$PREVIOUS_VERSION"
+    version_pypi="~=$PREVIOUS_VERSION"
   elif [[ $compatible_semver == "minor" ]]; then
-    major_minor_v=$(cut --delimiter=. --fields=1,2 <<<"$previous_version")
-    version_cargo="$previous_version"
-    version_npm="^$previous_version"
+    major_minor_v=$(cut --delimiter=. --fields=1,2 <<<"$PREVIOUS_VERSION")
+    version_cargo="$PREVIOUS_VERSION"
+    version_npm="^$PREVIOUS_VERSION"
     version_pypi="~=$major_minor_v"
   else
     echo "Invalid compatible semver: $compatible_semver"
@@ -52,17 +51,16 @@ add_breaking_changes_message() {
 }
 
 update_package_files_version() {
-  local previous_version=$1
-  local new_version=$2
+  local new_version=$1
 
   echo
   echo "[RELEASE]: Updating package files version..."
 
-  sed -i "s/version = \"$previous_version/version = \"$new_version/" "$cargo_toml_file"
-  sed -i "s/version = \"$previous_version/version = \"$new_version/" "$pyproject_toml_file"
-  sed -i "s/version\": \"$previous_version/version\": \"$new_version/" "$tree_sitter_json_file"
-  sed -i "s/VERSION := $previous_version/VERSION := $new_version/" "$makefile"
-  sed -i "s/VERSION \"$previous_version/VERSION \"$new_version/" "$c_make_lists_file"
+  sed -i "s/version = \"$PREVIOUS_VERSION/version = \"$new_version/" "$cargo_toml_file"
+  sed -i "s/version = \"$PREVIOUS_VERSION/version = \"$new_version/" "$pyproject_toml_file"
+  sed -i "s/version\": \"$PREVIOUS_VERSION/version\": \"$new_version/" "$tree_sitter_json_file"
+  sed -i "s/VERSION := $PREVIOUS_VERSION/VERSION := $new_version/" "$makefile"
+  sed -i "s/VERSION \"$PREVIOUS_VERSION/VERSION \"$new_version/" "$c_make_lists_file"
 
   echo "[RELEASE]: Package files version updated!"
   echo
