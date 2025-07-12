@@ -14,15 +14,11 @@ trigger_release() {
   fi
 }
 
-get_current_version() {
-  local changelog_file=$1
-  sed --quiet '3p' "$changelog_file" | awk '{ print $2 }'
-}
+get_current_version() { sed --quiet '3p' "$CHANGELOG_FILE" | awk '{ print $2 }'; }
 
 add_breaking_changes_message() {
   local compatible_semver=$1
   local previous_version=$2
-  local changelog_file=$3
   local version_npm
   local version_cargo
   local version_pypi
@@ -46,11 +42,11 @@ add_breaking_changes_message() {
   echo "[RELEASE]: Breaking changes detected!"
   echo "[RELEASE]: Generating breaking change message..."
 
-  sed -i "4r $breaking_changes_message_file" "$changelog_file"
-  sed -i "s/{{ compatible_semver }}/$compatible_semver/" "$changelog_file"
-  sed -i "s/{{ version_npm }}/$version_npm/" "$changelog_file"
-  sed -i "s/{{ version_cargo }}/$version_cargo/" "$changelog_file"
-  sed -i "s/{{ version_pypi }}/$version_pypi/" "$changelog_file"
+  sed -i "4r $breaking_changes_message_file" "$CHANGELOG_FILE"
+  sed -i "s/{{ compatible_semver }}/$compatible_semver/" "$CHANGELOG_FILE"
+  sed -i "s/{{ version_npm }}/$version_npm/" "$CHANGELOG_FILE"
+  sed -i "s/{{ version_cargo }}/$version_cargo/" "$CHANGELOG_FILE"
+  sed -i "s/{{ version_pypi }}/$version_pypi/" "$CHANGELOG_FILE"
 
   echo "[RELEASE]: Breaking changes message generated!"
 }
