@@ -51,7 +51,8 @@ add_breaking_changes_message() {
 }
 
 update_package_files_version() {
-  local new_version=$1
+  local new_version
+  new_version=$(get_current_version)
 
   echo
   echo "[RELEASE]: Updating package files version..."

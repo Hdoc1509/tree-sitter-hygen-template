@@ -22,6 +22,6 @@ release_major_0() {
     add_breaking_changes_message "patch"
   fi
 
-  update_package_files_version "$(get_current_version)"
+  update_package_files_version
   # reminder_message
 }

@@ -16,6 +16,6 @@ release_normal() {
     add_breaking_changes_message "minor"
   fi
 
-  update_package_files_version "$(get_current_version)"
+  update_package_files_version
   # reminder_message
 }
