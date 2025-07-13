@@ -1,5 +1,23 @@
 # tree-sitter-hygen-template
 
+## 0.5.0
+
+### Minor Changes
+
+- Add `regex` injection to `metadata.value` when it's `metadata.key` is: ([`0b8341b`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/0b8341b9a624a0fe55ecef2e77b33b78f830a416))
+
+  - `after`
+  - `before`
+  - `skip_if`
+
+- Complete list of valid `metadata.key` nodes to be highlighted ([`fe12d5b`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/fe12d5bafcd7abcf9c8d40bea6c37df9a8d549cd))
+
+- Add `true` and `false` nodes to `metadata.value` node ([`5aa7c46`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/5aa7c46924a93882b22c944761cff6344c1bff59))
+
+- Add `number` node to `metadata.value` node ([`18d2c69`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/18d2c69c154dd1c134b5c3e04273339cde1f0bb3))
+
+- Add highglight capture for `number` nodes ([`f4082d9`](https://github.com/Hdoc1509/tree-sitter-hygen-template/commit/f4082d9ea81ec21c529df311642ad7ec467914ff))
+
 ## 0.4.2
 
 ### Patch Changes
