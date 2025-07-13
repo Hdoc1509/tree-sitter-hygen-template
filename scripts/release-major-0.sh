@@ -1,27 +1,22 @@
 # inject:regex:
 unstable_message_regex='^\w+(\(.*\))?:!'
 
-_get_last_tag() { git describe --tags --abbrev=0; }
+last_tag=$(git describe --tags --abbrev=0)
+breaking_changes_count=$(
+  git log "$last_tag"..HEAD --oneline |
+    grep --count --extended-regexp "$unstable_message_regex"
+)
 
-release_major_0() {
-  local breaking_changes_count
+info_log "Major 0 release!\n"
 
-  breaking_changes_count=$(
-    git log "$(_get_last_tag)"..HEAD --oneline |
-      grep --count --extended-regexp "$unstable_message_regex"
-  )
+trigger_release
 
-  info_log "Major 0 release!\n"
+# NOTE: uncomment to test
+# breaking_changes_count=1
 
-  trigger_release
+if [[ $breaking_changes_count -gt 0 ]]; then
+  add_breaking_changes_message "patch"
+fi
 
-  # NOTE: uncomment to test
-  # breaking_changes_count=1
-
-  if [[ $breaking_changes_count -gt 0 ]]; then
-    add_breaking_changes_message "patch"
-  fi
-
-  update_package_files_version
-  # reminder_message
-}
+update_package_files_version
+# reminder_message

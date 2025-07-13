@@ -24,8 +24,6 @@ previous_major=$(cut --delimiter=. --fields=1 <<<"$PREVIOUS_VERSION")
 
 if [[ $previous_major -eq 0 ]]; then
   source "$REPO_ROOT"/scripts/release-major-0.sh
-  release_major_0
 else
   source "$REPO_ROOT"/scripts/release-normal.sh
-  release_normal
 fi
