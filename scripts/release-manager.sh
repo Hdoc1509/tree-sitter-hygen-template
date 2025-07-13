@@ -20,9 +20,8 @@ if ! [[ -f $CHANGELOG_FILE ]]; then
 fi
 
 PREVIOUS_VERSION=$(sed --quiet '3p' "$CHANGELOG_FILE" | awk '{ print $2 }')
-previous_major=$(cut --delimiter=. --fields=1 <<<"$PREVIOUS_VERSION")
 
-if [[ $previous_major -eq 0 ]]; then
+if [[ ${PREVIOUS_VERSION:0:1} -eq 0 ]]; then
   source "$REPO_ROOT"/scripts/release-major-0.sh
 else
   source "$REPO_ROOT"/scripts/release-normal.sh
