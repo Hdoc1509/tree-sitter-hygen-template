@@ -12,8 +12,6 @@ trigger_release() {
   fi
 }
 
-get_current_version() { sed --quiet '3p' "$CHANGELOG_FILE" | awk '{ print $2 }'; }
-
 add_breaking_changes_message() {
   local compatible_semver=$1
   local version_npm
@@ -48,7 +46,7 @@ add_breaking_changes_message() {
 
 update_package_files_version() {
   local new_version
-  new_version=$(get_current_version)
+  new_version=$(sed --quiet '3p' "$CHANGELOG_FILE" | awk '{ print $2 }')
 
   echo && info_log "Updating package files version..."
 
@@ -66,5 +64,3 @@ update_package_files_version() {
   echo && warn_log "Don't forget to generate git tags:"
   command_snippet "npx" "changeset tag"
 }
-
-# TODO: add reminder_message()

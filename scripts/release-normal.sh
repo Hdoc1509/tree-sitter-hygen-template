@@ -14,4 +14,3 @@ if [[ $breaking_changes_count -gt 0 ]]; then
 fi
 
 update_package_files_version
-# reminder_message
