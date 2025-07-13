@@ -329,11 +329,35 @@
               {
                 "type": "SYMBOL",
                 "name": "string_value"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "true"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "false"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "number"
               }
             ]
           }
         }
       ]
+    },
+    "true": {
+      "type": "PATTERN",
+      "value": "\\s*?true"
+    },
+    "false": {
+      "type": "PATTERN",
+      "value": "\\s*?false"
+    },
+    "number": {
+      "type": "PATTERN",
+      "value": "\\s*?\\d+"
     },
     "string_value": {
       "type": "PATTERN",

@@ -160,11 +160,23 @@
           "named": true
         },
         {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
           "type": "output_directive",
           "named": true
         },
         {
           "type": "string_value",
+          "named": true
+        },
+        {
+          "type": "true",
           "named": true
         }
       ]
@@ -239,11 +251,23 @@
     "named": false
   },
   {
+    "type": "false",
+    "named": true
+  },
+  {
     "type": "key",
     "named": true
   },
   {
+    "type": "number",
+    "named": true
+  },
+  {
     "type": "string_value",
+    "named": true
+  },
+  {
+    "type": "true",
     "named": true
   }
 ]

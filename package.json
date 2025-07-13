@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-hygen-template",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Hygen Template grammar for tree-sitter",
   "repository": "github:Hdoc1509/tree-sitter-hygen-template",
   "license": "MIT",
@@ -55,7 +55,7 @@
     "gen": "wireit",
     "hl": "tree-sitter highlight",
     "install": "node-gyp-build",
-    "parser:release": "bash ./scripts/release-unstable.sh",
+    "parser:release": "bash ./scripts/release-manager.sh",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js",
