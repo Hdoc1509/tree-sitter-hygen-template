@@ -8,8 +8,7 @@ if ! [[ -f $CHANGELOG_FILE ]]; then
   PREVIOUS_VERSION="0.0.0"
 
   info_log "Initial release!"
-  warn_log "Breaking changes check will be skipped!"
-  echo
+  warn_log "Breaking changes check will be skipped!\n"
 
   trigger_release
 
