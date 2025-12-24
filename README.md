@@ -65,9 +65,9 @@ It extends the [`tree-sitter-embedded-template`][embedded-template] grammar.
 
    <!-- NOTE: follow https://docs.helix-editor.com/themes.html#scopes -->
 
-   1. `@property` -> `@variable.other.member`
-   2. `@boolean` -> `@constant.builtin.boolean`
-   3. `@number` -> `@constant.numeric`
+   - `@property` -> `@variable.other.member`
+   - `@boolean` -> `@constant.builtin.boolean`
+   - `@number` -> `@constant.numeric`
 
 > [!IMPORTANT]
 > Helix does not support register of custom directives/predicates, at least at
