@@ -32,15 +32,47 @@ It extends the [`tree-sitter-embedded-template`][embedded-template] grammar.
 
 ### Helix
 
-_To be added_
+1. Add to your `<config-dir>/helix/languages.toml`:
 
-<!--
-TODO: add script to add this grammar to Helix configuration. see:
-- https://docs.helix-editor.com/guides/adding_languages.html
-- https://docs.helix-editor.com/languages.html
-take reference from:
-https://github.com/IndianBoy42/tree-sitter-just?tab=readme-ov-file#manual-installation-helix
--->
+   <!-- markdownlint-disable line-length -->
+   <!-- NOTE: `rev` option does not support a tag:
+        https://github.com/helix-editor/helix/issues/5111 -->
+
+   ```toml
+   # NOTE: update this array to fit your needs
+   use-grammars = { only = ['hygen-template'] }
+
+   [[grammar]]
+   name = 'hygen-template'
+   # `rev` targets v0.5.0
+   source = { git = 'https://github.com/Hdoc1509/tree-sitter-hygen-template', rev = '2e8a71078c0bf421609caba0f77f4a94d44671c2' }
+
+   [[language]]
+   # v-- determines name of queries folder
+   name = 'hygen'
+   scope = 'source.hygen_template'
+   file-types = ['hygen']
+   grammar = 'hygen-template'
+   ```
+
+   <!-- markdownlint-enable line-length -->
+
+2. Run `hx --grammar fetch` and `hx --grammar build` to download and install
+   this grammar.
+
+3. Copy and adapt the [`queries`](./queries) directory to your
+   `<config-dir>/helix/runtime/queries/hygen` folder.
+
+   <!-- NOTE: follow https://docs.helix-editor.com/themes.html#scopes -->
+
+   1. `@property` -> `@variable.other.member`
+   2. `@boolean` -> `@constant.builtin.boolean`
+   3. `@number` -> `@constant.numeric`
+
+> [!IMPORTANT]
+> Helix does not support register of custom directives/predicates, at least at
+> 23th, December 2025. Due to this, [dynamic injection](#dynamic-injection) is
+> not possible.
 
 ### Emacs
 
