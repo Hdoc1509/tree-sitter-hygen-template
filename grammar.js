@@ -19,7 +19,7 @@ module.exports = grammar(embedded_template, {
       seq(
         token(prec(1, "---")),
         /\n/,
-        repeat1($.metadata),
+        repeat($.metadata),
         "---",
         optional(/\n/),
       ),
