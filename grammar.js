@@ -16,13 +16,7 @@ module.exports = grammar(embedded_template, {
     template: ($) => choice(seq($.frontmatter, optional($.body)), $.body),
 
     frontmatter: ($) =>
-      seq(
-        token(prec(1, "---")),
-        /\n/,
-        repeat($.metadata),
-        "---",
-        optional(/\n/),
-      ),
+      seq(token(prec(1, "---")), /\n/, repeat($.metadata), "---"),
 
     metadata: ($) =>
       seq(field("key", $.key), ":", field("value", $.value), /\n/),

@@ -262,18 +262,6 @@
         {
           "type": "STRING",
           "value": "---"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "PATTERN",
-              "value": "\\n"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
         }
       ]
     },
