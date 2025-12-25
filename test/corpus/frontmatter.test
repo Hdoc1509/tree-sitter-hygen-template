@@ -1,11 +1,12 @@
 =================||
 Empty Frontmatter
-
-:error
 =================||
 ---
 ---
 ---||
+
+(template
+  (frontmatter))
 
 =================||
 Basic Frontmatter
