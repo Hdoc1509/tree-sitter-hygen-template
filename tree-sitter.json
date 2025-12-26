@@ -8,8 +8,7 @@
       "file-types": [
         "hygen"
       ],
-      "highlights": "queries/highlights.scm",
-      "injection-regex": "^hygen_template$"
+      "highlights": "queries/highlights.scm"
     }
   ],
   "metadata": {
