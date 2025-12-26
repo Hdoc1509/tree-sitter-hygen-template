@@ -83,10 +83,15 @@ TODO: take reference from:
 https://github.com/tree-sitter-perl/tree-sitter-perl?tab=readme-ov-file#emacs
 -->
 
-### In General
+### Outdated `release` branch
 
-You can get the built files from the [`release` branch][release-branch]. If you
-have specific instructions for your editor, PR's are welcome.
+Until [`v0.5.0`][v0.5.0], built files of this grammar were also published to the
+[`release` branch][release-branch] for each released version. That branch will
+not be updated anymore, in favor to the usage of [`release` wokflow of
+`tree-sitter`][ts-release-workflow].
+
+Instead of targeting the [`release` branch][release-branch], use a tagged
+[release][releases] of this repository.
 
 ## Dynamic Injection
 
@@ -157,3 +162,6 @@ the editor:
 [hygen-nvim-injection-queries]: https://github.com/Hdoc1509/hygen.nvim/blob/master/queries/hygen_template/injections.scm
 [hygen-nvim-tree-sitter]: https://github.com/Hdoc1509/hygen.nvim/blob/master/lua/hygen/tree-sitter.lua
 [release-branch]: https://github.com/Hdoc1509/tree-sitter-hygen-template/tree/release
+[releases]: https://github.com/Hdoc1509/tree-sitter-hygen-template/releases
+[v0.5.0]: https://github.com/Hdoc1509/tree-sitter-hygen-template/releases/tag/v0.5.0
+[ts-release-workflow]: https://github.com/tree-sitter/workflows#release-workflow

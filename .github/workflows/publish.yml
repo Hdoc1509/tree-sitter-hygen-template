@@ -27,19 +27,14 @@ jobs:
     secrets:
       PYPI_API_TOKEN: ${{secrets.PYPI_API_TOKEN}}
 
-  gh-pages:
-    runs-on: ubuntu-22.04
+  github:
     if: github.repository == 'Hdoc1509/tree-sitter-hygen-template'
     permissions:
+      attestations: write
       contents: write
-    steps:
-      - uses: actions/checkout@v4
-
-      - run: ./scripts/prepare-to-publish.sh
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./release
-          publish_branch: release
+      id-token: write
+    uses: tree-sitter/workflows/.github/workflows/release.yml@main
+    with:
+      generate: true
+      release-body: |
+        Please refer to [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGELOG.md) for details.
