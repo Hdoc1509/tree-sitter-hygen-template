@@ -87,8 +87,8 @@ https://github.com/tree-sitter-perl/tree-sitter-perl?tab=readme-ov-file#emacs
 
 Until [`v0.5.0`][v0.5.0], built files of this grammar were also published to the
 [`release` branch][release-branch] for each released version. That branch will
-not be updated anymore, in favor to the usage of [`release` wokflow of
-`tree-sitter`][ts-release-workflow].
+not be updated anymore, [`release` workflow of
+`tree-sitter`][ts-release-workflow] will be used instead.
 
 Instead of targeting the [`release` branch][release-branch], use a tagged
 [release][releases] of this repository.
