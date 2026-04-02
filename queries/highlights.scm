@@ -31,3 +31,8 @@
 ] @boolean
 
 (number) @number
+
+(template
+  (frontmatter) @_frontmatter
+  (#match? @_frontmatter "from:")
+  (body) @comment)
