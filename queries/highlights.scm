@@ -28,7 +28,7 @@
   ":"
 ] @punctuation.delimiter
 
-(comment_directive) @comment
+(comment) @comment
 
 [
   (true)
