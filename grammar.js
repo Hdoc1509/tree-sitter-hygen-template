@@ -12,6 +12,9 @@ const embedded_template = require("tree-sitter-embedded-template/grammar");
 module.exports = grammar(embedded_template, {
   name: "hygen_template",
 
+  // TODO: use `comment_directive` here
+  extras: ($) => [$.frontmatter_comment, $._blank],
+
   rules: {
     template: ($) => choice(seq($.frontmatter, optional($.body)), $.body),
 
@@ -25,6 +28,7 @@ module.exports = grammar(embedded_template, {
       seq(
         repeat1(
           choice(
+            // TODO: check if `directive` can be removed from here
             $.directive,
             $.output_directive,
             $.string_value,
@@ -37,7 +41,7 @@ module.exports = grammar(embedded_template, {
     true: () => /\s*?true/,
     false: () => /\s*?false/,
     number: () => /\s*?\d+/,
-    string_value: () => /[^<\n]+/,
+    string_value: () => /[^<\n#]+/,
 
     body: ($) =>
       repeat1(
@@ -45,5 +49,8 @@ module.exports = grammar(embedded_template, {
         // $.graphql_directive node
         choice($.directive, $.output_directive, $.comment_directive, $.content),
       ),
+
+    frontmatter_comment: () => /#[^\r\n]*/,
+    _blank: () => /\s+/,
   },
 });

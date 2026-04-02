@@ -349,7 +349,7 @@
     },
     "string_value": {
       "type": "PATTERN",
-      "value": "[^<\\n]+"
+      "value": "[^<\\n#]+"
     },
     "body": {
       "type": "REPEAT1",
@@ -374,9 +374,26 @@
           }
         ]
       }
+    },
+    "frontmatter_comment": {
+      "type": "PATTERN",
+      "value": "#[^\\r\\n]*"
+    },
+    "_blank": {
+      "type": "PATTERN",
+      "value": "\\s+"
     }
   },
-  "extras": [],
+  "extras": [
+    {
+      "type": "SYMBOL",
+      "name": "frontmatter_comment"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_blank"
+    }
+  ],
   "conflicts": [],
   "precedences": [],
   "externals": [],

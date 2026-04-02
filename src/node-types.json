@@ -255,6 +255,10 @@
     "named": true
   },
   {
+    "type": "frontmatter_comment",
+    "named": true
+  },
+  {
     "type": "key",
     "named": true
   },
