@@ -110,3 +110,19 @@ at_line: 1
     (metadata
       (key)
       (value (number)))))
+
+========||
+Comments
+========||
+---
+to: this/path/please.md
+# sure
+---
+---||
+(template
+  (frontmatter
+    (metadata
+      (key)
+      (value
+        (string_value)))
+    (frontmatter_comment)))
