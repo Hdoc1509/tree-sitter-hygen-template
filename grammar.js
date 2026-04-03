@@ -12,12 +12,17 @@ const embedded_template = require("tree-sitter-embedded-template/grammar");
 module.exports = grammar(embedded_template, {
   name: "hygen_template",
 
-  extras: ($) => [$.frontmatter_comment, $._blank],
+  extras: ($) => [$._blank],
 
   rules: {
     template: ($) => choice(seq($.frontmatter, optional($.body)), $.body),
 
-    frontmatter: ($) => seq(token(prec(1, "---")), repeat($.metadata), "---"),
+    frontmatter: ($) =>
+      seq(
+        token(prec(1, "---")),
+        repeat(choice($.metadata, $.frontmatter_comment)),
+        "---",
+      ),
 
     metadata: ($) =>
       seq(field("key", $.key), ":", field("value", $.value), /\n/),

@@ -80,6 +80,10 @@
       "required": false,
       "types": [
         {
+          "type": "frontmatter_comment",
+          "named": true
+        },
+        {
           "type": "metadata",
           "named": true
         }

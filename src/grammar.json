@@ -251,8 +251,17 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "SYMBOL",
-            "name": "metadata"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "metadata"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "frontmatter_comment"
+              }
+            ]
           }
         },
         {
@@ -381,10 +390,6 @@
     }
   },
   "extras": [
-    {
-      "type": "SYMBOL",
-      "name": "frontmatter_comment"
-    },
     {
       "type": "SYMBOL",
       "name": "_blank"
