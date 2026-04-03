@@ -41,9 +41,9 @@ module.exports = grammar(embedded_template, {
           ),
         ),
       ),
-    true: () => /\s*?true/,
-    false: () => /\s*?false/,
-    number: () => /\s*?\d+/,
+    true: () => /\s*true/,
+    false: () => /\s*false/,
+    number: () => /\s*\d+/,
     string_value: () => /[^<\n#]+/,
 
     body: ($) =>

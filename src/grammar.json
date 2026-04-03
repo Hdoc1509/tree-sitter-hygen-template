@@ -342,15 +342,15 @@
     },
     "true": {
       "type": "PATTERN",
-      "value": "\\s*?true"
+      "value": "\\s*true"
     },
     "false": {
       "type": "PATTERN",
-      "value": "\\s*?false"
+      "value": "\\s*false"
     },
     "number": {
       "type": "PATTERN",
-      "value": "\\s*?\\d+"
+      "value": "\\s*\\d+"
     },
     "string_value": {
       "type": "PATTERN",
