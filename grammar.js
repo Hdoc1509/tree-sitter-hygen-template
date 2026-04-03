@@ -12,7 +12,6 @@ const embedded_template = require("tree-sitter-embedded-template/grammar");
 module.exports = grammar(embedded_template, {
   name: "hygen_template",
 
-  // TODO: use `comment_directive` here
   extras: ($) => [$.frontmatter_comment, $._blank],
 
   rules: {
