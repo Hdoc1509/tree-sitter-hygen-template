@@ -29,8 +29,7 @@
   ],
   "dependencies": {
     "node-addon-api": "8.0.0",
-    "node-gyp-build": "4.8.1",
-    "tree-sitter-embedded-template": "0.23.0"
+    "node-gyp-build": "4.8.1"
   },
   "devDependencies": {
     "@changesets/cli": "2.27.10",

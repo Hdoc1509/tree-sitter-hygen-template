@@ -10,7 +10,8 @@
 [Tree-sitter](https://github.com/tree-sitter/tree-sitter) grammar for
 [Hygen](https://github.com/jondot/hygen) templates.
 
-It extends the [`tree-sitter-embedded-template`][embedded-template] grammar.
+Based on the `ejs` implementation from the [`tree-sitter-embedded-template`][embedded-template]
+grammar.
 
 ## Parser requirements
 
@@ -95,9 +96,7 @@ Instead of targeting the [`release` branch][release-branch], use a tagged
 
 ## Dynamic Injection
 
-Thanks to `content` node of [`tree-sitter-embedded-template`
-grammar][embedded-template-grammar], dynamic injections can be attached to
-template body.
+Thanks to `content` node, dynamic injections can be attached to template's body.
 
 ### File naming convention
 
@@ -109,7 +108,7 @@ Just add `.hygen` to the end of the file name, i.e.:
 
 ### Tree-sitter directive
 
-To implement dynamic injection, is recommended to create a directive with the
+To implement dynamic injection, is required to create a directive with the
 following name:
 
 ```txt
@@ -157,7 +156,6 @@ the editor:
 [npm]: https://img.shields.io/npm/v/tree-sitter-hygen-template?logo=npm
 [pypi]: https://img.shields.io/pypi/v/tree-sitter-hygen-template?logo=pypi&logoColor=ffd242
 [embedded-template]: https://github.com/tree-sitter/tree-sitter-embedded-template
-[embedded-template-grammar]: https://github.com/tree-sitter/tree-sitter-embedded-template/blob/master/grammar.js
 [hygen-nvim-filetype]: https://github.com/Hdoc1509/hygen.nvim/blob/master/ftdetect/hygen.vim
 [hygen-nvim-injection-queries]: https://github.com/Hdoc1509/hygen.nvim/blob/master/queries/hygen_template/injections.scm
 [hygen-nvim-tree-sitter]: https://github.com/Hdoc1509/hygen.nvim/blob/master/lua/hygen/tree-sitter.lua

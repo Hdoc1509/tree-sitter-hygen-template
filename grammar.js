@@ -7,9 +7,7 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-const embedded_template = require("tree-sitter-embedded-template/grammar");
-
-module.exports = grammar(embedded_template, {
+module.exports = grammar({
   name: "hygen_template",
 
   extras: ($) => [$._blank],
@@ -46,12 +44,21 @@ module.exports = grammar(embedded_template, {
     number: () => /\s*\d+/,
     string_value: () => /[^<\n#]+/,
 
+    directive: ($) =>
+      seq(choice("<%", "<%_"), optional($.code), choice("%>", "-%>", "_%>")),
+    output_directive: ($) =>
+      seq(choice("<%=", "<%-"), optional($.code), choice("%>", "-%>")),
+    comment_directive: ($) =>
+      seq("<%#", optional(alias($.code, $.comment)), "%>"),
+
+    code: () => repeat1(choice(/[^%=_-]+|[%=_-]/, "%%>")),
+
     body: ($) =>
       repeat1(
-        // same as `template` rule of `embedded_template` but without
-        // $.graphql_directive node
         choice($.directive, $.output_directive, $.comment_directive, $.content),
       ),
+
+    content: () => prec.right(repeat1(choice(/[^<]+|</, "<%%"))),
 
     frontmatter_comment: () => /#[^\r\n]*/,
     _blank: () => /\s+/,

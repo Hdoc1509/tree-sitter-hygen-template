@@ -5,20 +5,14 @@
     "to" "from" "force" "unless_exists" "inject" "after" "skip_if" "sh" "before" "prepend" "append"
     "at_line"))
 
-; TODO: only highlight valid tags of `ejs`
-; reference: https://github.com/mde/ejs#tags
-; NOTE: add highlight for tags of `directive` if needed
+; NOTE: add highlight for tags of `directive` if needed in frontmatter
 (value
   (output_directive
     [
       "<%="
-      "<%=="
-      "<%|="
-      "<%|=="
       "<%-"
       "%>"
       "-%>"
-      "=%>"
     ] @keyword))
 
 (string_value) @string
@@ -50,8 +44,6 @@
         [
           "<%"
           "<%_"
-          "<%|"
-          "<%-"
           "%>"
           "-%>"
           "_%>"
@@ -59,13 +51,9 @@
       (output_directive
         [
           "<%="
-          "<%=="
-          "<%|="
-          "<%|=="
           "<%-"
           "%>"
           "-%>"
-          "=%>"
         ] @keyword)
       (comment_directive
         [
@@ -83,8 +71,6 @@
         [
           "<%"
           "<%_"
-          "<%|"
-          "<%-"
           "%>"
           "-%>"
           "_%>"
@@ -92,13 +78,9 @@
       (output_directive
         [
           "<%="
-          "<%=="
-          "<%|="
-          "<%|=="
           "<%-"
           "%>"
           "-%>"
-          "=%>"
         ] @keyword)
       (comment_directive
         [
